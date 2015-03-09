@@ -4,7 +4,6 @@ Nim bindings for the Thalmic Labs Myo gesture control armband SDK.
 
 ![io-usb Logo](logo.png)
 
-
 ## About
 
 
