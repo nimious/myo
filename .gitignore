@@ -1,0 +1,6 @@
+nimcache
+libmyo
+.directory
+*.dll
+*.exe
+*.sublime*
