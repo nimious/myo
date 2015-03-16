@@ -18,7 +18,7 @@ io-myo was last built and tested with **Myo SDK 0.8.1** and
 
 - ~~Android~~
 - ~~iOS~~
-- MacOS X
+- ~~MacOS X~~
 - Windows
 
 
@@ -28,8 +28,9 @@ io-myo was last built and tested with **Myo SDK 0.8.1** and
 
 Download and install the latest *MyoConnect* software from the Thalmic Labs
 download page, as well as the *Myo SDK for Mac* from the Thalmic Labs developer
-portal. Copy the `myo32.dll` and/or `myo64.dll` files from the SDK into your
-program's directory.
+portal.
+
+TODO
 
 ### Windows
 
