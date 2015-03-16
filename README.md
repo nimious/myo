@@ -7,7 +7,7 @@ Nim bindings for the Thalmic Labs Myo gesture control armband SDK.
 
 ## About
 
-io-myo contains bindings to the Myo SDK for the [Nim](http://nim-lang.org)
+io-myo contains bindings to the *Myo SDK* for the [Nim](http://nim-lang.org)
 programming language. The Myo is a gesture control armband that lets users
 wirelessly control a computer by detecting electrical activity in arm muscles.
 
@@ -66,3 +66,4 @@ For all other issues related to USB devices visit the libusb web site below.
 
 * [Thalmic Labs Download Page](https://www.thalmic.com/start/)
 * [Thalmic Labs Developer Portal](https://developer.thalmic.com/)
+* [Nim Programming Language](http://nim-lang.org/)
