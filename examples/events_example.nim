@@ -29,7 +29,8 @@ proc findMyoHandler(userData: pointer; event: LibmyoEvent): LibmyoHandlerResult 
 proc runHandler(userData: pointer; event: LibmyoEvent): LibmyoHandlerResult =
   let m = libmyoEventGetMyo(event)
   if m != nil:
-    case libmyoEventGetType(event)
+    let eventType = libmyoEventGetType(event)
+    case eventType
     of LibmyoEventType.armSynced:
       echo "Arm synced"
     of LibmyoEventType.armUnsynced:
@@ -55,7 +56,7 @@ proc runHandler(userData: pointer; event: LibmyoEvent): LibmyoHandlerResult =
     of LibmyoEventType.unpaired:
       echo "Unpaired"
     else:
-      echo "Unknown event type"
+      echo "Unknown event type", ord(eventType)
   LibmyoHandlerResult.continueProcessing  
 
 
