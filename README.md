@@ -4,28 +4,39 @@ Nim bindings for the Thalmic Labs Myo gesture control armband SDK.
 
 ![io-usb Logo](logo.png)
 
+
 ## About
 
-
+io-myo contains bindings to the Myo SDK for the [Nim](http://nim-lang.org)
+programming language. The Myo is a gesture control armband that lets users
+wirelessly control a computer by detecting electrical activity in arm muscles.
 
 ## Supported Platforms
 
-io-myo is still under development and does not work yet. So far, the
-following platforms have been built and tested:
+io-myo was last built and tested with **Myo SDK 0.8.1** and
+**MyoConnect 0.9.1**. The bindings currently support the following platforms:
 
-- ~~MacOS X~~
-- ~~Windows~~
+- ~~Android~~
+- ~~iOS~~
+- MacOS X
+- Windows
 
 
 ## Prerequisites
 
 ### MacOS X
 
-TODO
+Download and install the latest *MyoConnect* software from the Thalmic Labs
+download page, as well as the *Myo SDK for Mac* from the Thalmic Labs developer
+portal. Copy the `myo32.dll` and/or `myo64.dll` files from the SDK into your
+program's directory.
 
 ### Windows
 
-TODO
+Download and install the latest *MyoConnect* software from the Thalmic Labs
+download page, as well as the *Myo SDK for Windows* from the Thalmic Labs
+developer portal. Copy the `myo32.dll` and/or `myo64.dll` files from the SDK
+into your program's directory.
 
 
 ## Dependencies
@@ -53,4 +64,5 @@ For all other issues related to USB devices visit the libusb web site below.
 
 ## References
 
-TODO
+* [Thalmic Labs Download Page](https://www.thalmic.com/start/)
+* [Thalmic Labs Developer Portal](https://developer.thalmic.com/)

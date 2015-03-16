@@ -30,20 +30,23 @@ proc findMyoHandler(userData: pointer; event: LibmyoEvent): LibmyoHandlerResult 
 if libmyoInitHub(addr hub, appId, addr errorDetails) != LibmyoResult.success:
   echo "Error: Failed to initialize hub"
 else:
-  echo "Attempting to find a Myo..."
   while myo == nil:
+    echo "Attempting to find a Myo..."
     if libmyoRun(hub, 1000, findMyoHandler, nil, addr errorDetails) != LibmyoResult.success:
       echo "Error: Failed to find devices"
       break
 
   # vibrate it
   if myo != nil:
+    echo "Vibrating short..."
     if libmyoVibrate(myo, LibmyoVibrationType.short, addr errorDetails) != LibmyoResult.success:
       echo "Warning: Failed to vibrate Myo (short)"
     sleep(1000)
+    echo "Vibrating medium..."
     if libmyoVibrate(myo, LibmyoVibrationType.medium, addr errorDetails) != LibmyoResult.success:
       echo "Warning: Failed to vibrate Myo (medium)"
     sleep(1000)
+    echo "Vibrating long..."
     if libmyoVibrate(myo, LibmyoVibrationType.long, addr errorDetails) != LibmyoResult.success:
       echo "Warning: Failed to vibrate Myo (long)"
 
