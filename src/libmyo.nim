@@ -533,4 +533,4 @@ proc libmyoRun*(hub: LibmyoHub; duration: cint; handler: LibmyoHandler;
   ##   - `errorInvalidArgument <#LibmyoResult>`_ if `handler` is `nil`
   ##
   ## Runs for up to approximately `duration` milliseconds or until a called
-  ## handler returns `LibmyoHandlerResult.stop <#LibmyoHandlerResult>`.
+  ## handler returns `LibmyoHandlerResult.stop <#LibmyoHandlerResult>`_.
