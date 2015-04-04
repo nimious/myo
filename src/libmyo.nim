@@ -168,7 +168,7 @@ proc libmyoVibrate*(myo: LibmyoMyo; vibrationType: LibmyoVibrationType;
 
 proc libmyoRequestRssi*(myo: LibmyoMyo; outError: ptr LibmyoErrorDetails):
   LibmyoResult
-  {.cdecl, dynlib: dllname, importc: "libmyo_vibrate".}
+  {.cdecl, dynlib: dllname, importc: "libmyo_request_rssi".}
   ## Request the RSSI for a given myo.
   ##
   ## myo
@@ -189,7 +189,7 @@ type
 
 proc libmyoSetStreamEmg*(myo: LibmyoMyo; emg: LibmyoStreamEmg; 
   outError: ptr LibmyoErrorDetails): LibmyoResult
-  {.cdecl, dynlib: dllname, importc: "libmyo_request_rssi".}
+  {.cdecl, dynlib: dllname, importc: "libmyo_set_stream_emg".}
   ## Set whether or not to stream EMG data for a given myo.
   ##
   ## myo
@@ -488,7 +488,7 @@ proc libmyoEventGetRssi*(event: LibmyoEvent): cschar
   ## Valid for `LibmyoEventRssi <#LibmyoEventRssi>`_ events only.
 
 
-proc libmyoEventGetEmg*(event: LibmyoEvent; sensor: cuint): cschar
+proc libmyoEventGetEmg*(event: LibmyoEvent; sensor: cint): cschar
   {.cdecl, dynlib: dllname, importc: "libmyo_event_get_emg".}
   ## Retrieve an EMG data point associated with an event.
   ##

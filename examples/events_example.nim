@@ -70,10 +70,13 @@ else:
       echo "Error: Failed to find devices"
       break
 
-  while true:
-    if libmyoRun(hub, 50, runHandler, nil, addr errorDetails) != LibmyoResult.success:
-      echo "Error: Failed to run main loop"
-      break
+  # process events
+  if myo != nil:
+    echo "Found a Myo"
+    while true:
+      if libmyoRun(hub, 50, runHandler, nil, addr errorDetails) != LibmyoResult.success:
+        echo "Error: Failed to run main loop"
+        break
 
   # shut down hub
   if libmyoShutdownHub(hub, addr errorDetails) != LibmyoResult.success:

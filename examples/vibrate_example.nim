@@ -38,6 +38,7 @@ else:
 
   # vibrate it
   if myo != nil:
+    echo "Found a Myo"
     echo "Vibrating short..."
     if libmyoVibrate(myo, LibmyoVibrationType.short, addr errorDetails) != LibmyoResult.success:
       echo "Warning: Failed to vibrate Myo (short)"

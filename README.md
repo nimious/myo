@@ -54,6 +54,15 @@ in your project:
 import libmyo
 ```
 
+This package also contains the types needed for the official Myo Bluetooth API.
+
+```nimrod
+import myohw
+```
+
+Please note that Bluetooth communication itself is not included - a separate
+library for Bluetooth Low Energy is required for the desired target platform.
+
 
 ## Support
 
@@ -67,4 +76,5 @@ For all other issues related to USB devices visit the libusb web site below.
 
 * [Thalmic Labs Download Page](https://www.thalmic.com/start/)
 * [Thalmic Labs Developer Portal](https://developer.thalmic.com/)
+* [Myo Bluetooth API Specs](http://developerblog.myo.com/myo-bluetooth-spec-released/)
 * [Nim Programming Language](http://nim-lang.org/)

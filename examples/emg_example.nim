@@ -4,13 +4,18 @@
 ## See the file LICENSE included in this distribution for licensing details.
 ## GitHub pull requests are encouraged. (c) 2015 Headcrash Industries LLC.
 
-import libmyo
+import libmyo, strutils
 
 
 # The following program is a basic example of using `libmyo` to connect to a
 # Myo armband and log out EMG data.
 
 const appId: cstring = "us.nimio.examples.emg"
+
+
+# The following program is a basic example of using `libmyo` to connect to a
+# Myo armband and output EMG data. EMG streaming is only supported for one Myo
+# at a time.
 
 var errorDetails: LibmyoErrorDetails
 var hub: LibmyoHub
@@ -29,7 +34,10 @@ proc findMyoHandler(userData: pointer; event: LibmyoEvent): LibmyoHandlerResult 
 proc runHandler(userData: pointer; event: LibmyoEvent): LibmyoHandlerResult =
   let m = libmyoEventGetMyo(event)
   if (m != nil) and (libmyoEventGetType(event) == LibmyoEventType.emg):
-    echo "EMG data"
+    var data = ""
+    for i in 0..7:
+      data &= toHex(libmyoEventGetEmg(event, (cint)i), 2) & " "
+    echo "EMG data: ", data
   LibmyoHandlerResult.continueProcessing  
 
 
@@ -45,9 +53,11 @@ else:
 
   # enable EMG stream
   if myo != nil:
+    echo "Found a Myo"
     if libmyoSetStreamEmg(myo, LibmyoStreamEmg.enabled, addr errorDetails) != LibmyoResult.success:
       echo "Error: Failed to enable EMG stream"
     else:
+      echo "Enabled EMG stream"
       while true:
         if libmyoRun(hub, 50, runHandler, nil, addr errorDetails) != LibmyoResult.success:
           echo "Error: Failed to run main loop"
