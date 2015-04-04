@@ -8,7 +8,7 @@
 
 
 when defined(macosx):
-  const dllname = "libmyo.dylib"
+  const dllname = "/Library/Frameworks/myo.framework/myo"
 elif defined(windows):
   when defined(amd64):
     const dllname = "myo64.dll"

@@ -4,3 +4,6 @@ libmyo
 *.dll
 *.exe
 *.sublime*
+emg_example
+events_example
+vibrate_example
