@@ -36,11 +36,9 @@ TODO
 
 Download and install the latest *MyoConnect* software from the Thalmic Labs
 download page, as well as the *Myo SDK for Mac* from the Thalmic Labs developer
-portal.
-
-io-myo currently expects the SDK's  Xcode framework to be installed in
+portal. io-myo currently expects the SDK's  Xcode framework to be installed in
 */Library/Frameworks/myo.framework*. You can simply create a symbolic link to
-where you installed the SDK, i.e.:
+where you installed the SDK, for example:
 
 ```
 ln -s /Users/YourName/Sdk/myo_sdk_0.8.1/myo.framework /Library/Frameworks/myo.framework
