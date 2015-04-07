@@ -81,7 +81,7 @@ library for Bluetooth Low Energy is required for the desired target platform.
 Please [file an issue](https://github.com/nimious/io-myo/issues), submit a
 [pull request](https://github.com/nimious/io-myo/pulls?q=is%3Aopen+is%3Apr)
 or email us at info@nimio.us if this package is out of date or contains bugs.
-For all other issues related to USB devices visit the libusb web site below.
+For all other issues related to Myo devices visit the developer portal below.
 
 
 ## References
