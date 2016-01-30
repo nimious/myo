@@ -1,4 +1,4 @@
-## *io-myo* - Nim bindings for the Thalmic Labs Myo gesture control armband SDK.
+## *myo* - Nim bindings for the Thalmic Labs Myo gesture control armband SDK.
 ##
 ## This file is part of the `Nim I/O <http://nimio.us>`_ package collection.
 ## See the file LICENSE included in this distribution for licensing details.
@@ -15,7 +15,7 @@ elif defined(windows):
   else:
     const dllname = "myo32.dll"
 else:
-  {.error: "io-myo does not support this platform".}
+  {.error: "myo does not support this platform".}
 
 
 type
@@ -121,7 +121,7 @@ type
     standard ## Pose events are not sent while a Myo is locked
 
 
-proc libmyoSetLockingPolicy*(hub: LibmyoHub; policy: LibmyoLockingPolicy; 
+proc libmyoSetLockingPolicy*(hub: LibmyoHub; policy: LibmyoLockingPolicy;
   outError: ptr LibmyoErrorDetails): LibmyoResult
   {.cdecl, dynlib: dllname, importc: "libmyo_set_locking_policy".}
   ## Set the locking policy for Myos connected to the hub.
@@ -180,14 +180,14 @@ proc libmyoRequestRssi*(myo: LibmyoMyo; outError: ptr LibmyoErrorDetails):
   ##   - `errorInvalidArgument <#LibmyoResult>`_ if `myo` is `nil`
 
 
-type 
+type
   LibmyoStreamEmg* {.pure, size: sizeof(cint).} = enum ## \
     ## EMG streaming modes.
     disabled, ## Do not send EMG data
     enabled ## Send EMG data
 
 
-proc libmyoSetStreamEmg*(myo: LibmyoMyo; emg: LibmyoStreamEmg; 
+proc libmyoSetStreamEmg*(myo: LibmyoMyo; emg: LibmyoStreamEmg;
   outError: ptr LibmyoErrorDetails): LibmyoResult
   {.cdecl, dynlib: dllname, importc: "libmyo_set_stream_emg".}
   ## Set whether or not to stream EMG data for a given myo.
@@ -356,7 +356,7 @@ type
     revD = 2 ## Consumer units
 
 
-proc libmyoEventGetFirmwareVersion*(event: LibmyoEvent; 
+proc libmyoEventGetFirmwareVersion*(event: LibmyoEvent;
   component: LibmyoVersionComponent): cint
   {.cdecl, dynlib: dllname, importc: "libmyo_event_get_firmware_version".}
   ## Retrieve the Myo armband's firmware version from an event.

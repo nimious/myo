@@ -1,4 +1,4 @@
-## *io-myo* - Nim bindings for the Thalmic Labs Myo gesture control armband SDK.
+## *myo* - Nim bindings for the Thalmic Labs Myo gesture control armband SDK.
 ##
 ## This file is part of the `Nim I/O <http://nimio.us>`_ package collection.
 ## See the file LICENSE included in this distribution for licensing details.
@@ -72,13 +72,13 @@ type
 
 
   MyohwPose* {.pure, size: sizeof(cushort).} = enum ## \
-    ## Supported poses. 
+    ## Supported poses.
     rest = 0x00000000,
-    fist = 0x00000001, 
+    fist = 0x00000001,
     waveIn = 0x00000002,
-    waveOut = 0x00000003, 
+    waveOut = 0x00000003,
     fingersSpread = 0x00000004,
-    doubleTap = 0x00000005, 
+    doubleTap = 0x00000005,
     unknown = 0x0000FFFF
 
 
@@ -137,7 +137,7 @@ type
     hardwareRev*: MyohwHardwareRev ## Myo hardware revision.
 
 
-const 
+const
   myohwFirmwareVersionMajor* = 1 ## Firmware's major version number.
   myohwFirmwareVersionMinor* = 2 ## Firmware's minor version number.
 
@@ -229,7 +229,7 @@ type
       ## `MyohwCommand.deepSleep <#MyohwCommand>`_, payload_size = 0.
 
 
-const 
+const
   myohwCommandVibrate2Steps* = 6
 
 
@@ -237,7 +237,7 @@ type
   MyohwCommandVibrate2Steps* = object
     duration*: cushort ## Duration (in ms) of the vibration
     strength*: cuchar ## Strength of vibration (0 - motor off, 255 - full speed)
-  
+
 
   MyohwCommandVibrate2* = object
     ## Extended vibration command.
@@ -342,7 +342,7 @@ type
     tapDirection*: cuchar
     tapCount*: cuchar
 
-  
+
   MyohwMotionEvent* = object
     ## Motion event.
     eventType*: MyohwMotionEventType ## Type typeof motion event that occurred.
@@ -352,11 +352,11 @@ type
 type
   MyohwClassifierEventType* {.pure, size: sizeof(cuchar).} = enum ## \
     ## Types of classifier events.
-    armSynced = 0x00000001, 
-    armUnsynced = 0x00000002, 
-    pose = 0x00000003, 
-    unlocked = 0x00000004, 
-    locked = 0x00000005, 
+    armSynced = 0x00000001,
+    armUnsynced = 0x00000002,
+    pose = 0x00000003,
+    unlocked = 0x00000004,
+    locked = 0x00000005,
     syncFailed = 0x00000006
 
 
@@ -364,14 +364,14 @@ type
   MyohwArm* {.pure, size: sizeof(cuchar).} = enum ## \
     ## Enumeration identifying a right arm or left arm.
     right = 0x00000001,
-    left = 0x00000002, 
+    left = 0x00000002,
     unknown = 0x000000FF
 
 
   MyohwXDirection* {.pure, size: sizeof(cuchar).} = enum ## \
     ## Possible directions for Myo's +x axis relative to a user's arm.
-    towardWrist = 0x00000001, 
-    towardElbow = 0x00000002, 
+    towardWrist = 0x00000001,
+    towardElbow = 0x00000002,
     unknown = 0x000000FF
 
 
@@ -398,14 +398,14 @@ type
       ## `MyohwClassifierEventType.syncFailed <#MyohwClassifierEventType>`_
       ## events.
 
-  
+
   MyohwClassifierEvent* = object
     ## Classifier event.
     eventType*: MyohwClassifierEventType ## Classifier even type.
     data*: MyohwClassifierEventData ## Event-specific data.
 
 
-const 
+const
   myohwEmgDefaultStreamingRate* = 200 ## The rate that EMG events are streamed
     ## over Bluetooth.
 

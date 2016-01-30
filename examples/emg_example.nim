@@ -1,4 +1,4 @@
-## *io-myo* - Nim bindings for the Thalmic Labs Myo gesture control armband SDK.
+## *myo* - Nim bindings for the Thalmic Labs Myo gesture control armband SDK.
 ##
 ## This file is part of the `Nim I/O <http://nimio.us>`_ package collection.
 ## See the file LICENSE included in this distribution for licensing details.
@@ -38,7 +38,7 @@ proc runHandler(userData: pointer; event: LibmyoEvent): LibmyoHandlerResult =
     for i in 0..7:
       data &= toHex(libmyoEventGetEmg(event, (cint)i), 2) & " "
     echo "EMG data: ", data
-  LibmyoHandlerResult.continueProcessing  
+  LibmyoHandlerResult.continueProcessing
 
 
 # initialize hub
