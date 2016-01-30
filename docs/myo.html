@@ -10,8 +10,8 @@
 <link rel="shortcut icon" href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AAAAAAUAAAAF////AP///wD///8A////AP///wD///8A////AP///wD///8A////AAAAAAIAAABbAAAAlQAAAKIAAACbAAAAmwAAAKIAAACVAAAAWwAAAAL///8A////AP///wD///8A////AAAAABQAAADAAAAAYwAAAA3///8A////AP///wD///8AAAAADQAAAGMAAADAAAAAFP///wD///8A////AP///wAAAACdAAAAOv///wD///8A////AP///wD///8A////AP///wD///8AAAAAOgAAAJ3///8A////AP///wAAAAAnAAAAcP///wAAAAAoAAAASv///wD///8A////AP///wAAAABKAAAAKP///wAAAABwAAAAJ////wD///8AAAAAgQAAABwAAACIAAAAkAAAAJMAAACtAAAAFQAAABUAAACtAAAAkwAAAJAAAACIAAAAHAAAAIH///8A////AAAAAKQAAACrAAAAaP///wD///8AAAAARQAAANIAAADSAAAARf///wD///8AAAAAaAAAAKsAAACk////AAAAADMAAACcAAAAnQAAABj///8A////AP///wAAAAAYAAAAGP///wD///8A////AAAAABgAAACdAAAAnAAAADMAAAB1AAAAwwAAAP8AAADpAAAAsQAAAE4AAAAb////AP///wAAAAAbAAAATgAAALEAAADpAAAA/wAAAMMAAAB1AAAAtwAAAOkAAAD/AAAA/wAAAP8AAADvAAAA3gAAAN4AAADeAAAA3gAAAO8AAAD/AAAA/wAAAP8AAADpAAAAtwAAAGUAAAA/AAAA3wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAADfAAAAPwAAAGX///8A////AAAAAEgAAADtAAAAvwAAAL0AAADGAAAA7wAAAO8AAADGAAAAvQAAAL8AAADtAAAASP///wD///8A////AP///wD///8AAAAAO////wD///8A////AAAAAIcAAACH////AP///wD///8AAAAAO////wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A//8AAP//AAD4HwAA7/cAAN/7AAD//wAAoYUAAJ55AACf+QAAh+EAAAAAAADAAwAA4AcAAP5/AAD//wAA//8AAA=="/>
 
 <!-- Google fonts -->
-<link href='http://fonts.googleapis.com/css?family=Raleway:400,600,900' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:400,500,600' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Raleway:400,600,900' rel='stylesheet' type='text/css'/>
+<link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:400,500,600' rel='stylesheet' type='text/css'/>
 
 <!-- CSS -->
 <title>Module libmyo</title>
@@ -53,7 +53,7 @@ body {
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
-  color: #2d2d2d;
+  color: #666;
   background-color: rgba(252, 248, 244, 0.75); }
 
 /* Skeleton grid */
@@ -361,13 +361,13 @@ h1 {
   font-size: 2em;
   padding-bottom: .15em;
   border-bottom: 1px solid #aaaaaa;
-  margin-top: 1.25em;
+  margin-top: 1.0em;
   line-height: 1.2em; }
 
 h1.title {
+  padding-bottom: 1em;
   border-bottom: 0px;
-  font-size: 2.75em;
-  margin: 0.5em 0 1em 0; }
+  font-size: 2.75em; }
 
 h2 {
   font-size: 1.5em;
@@ -404,7 +404,6 @@ li {
   line-height: 20px; }
 
 dl {
-  margin-top: 10px;
   margin-bottom: 20px; }
 
 dt,
@@ -412,7 +411,7 @@ dd {
   line-height: 20px; }
 
 dt {
-  font-weight: 600; }
+  font-weight: bold; }
 
 dd {
   margin-left: 10px;
@@ -421,7 +420,8 @@ dd {
 hr {
   margin: 20px 0;
   border: 0;
-  border-bottom: 1px solid #aaaaaa; }
+  border-top: 1px solid #eeeeee;
+  border-bottom: 1px solid #ffffff; }
 
 abbr[title],
 abbr[data-original-title] {
@@ -489,7 +489,7 @@ pre {
   box-sizing: border-box;
   min-width: calc(100% - 19.5px);
   padding: 9.5px;
-  margin: 0 10px 0px 10px;
+  margin: 0.25em 10px 0.25em 10px;
   font-size: 14px;
   line-height: 20px;
   white-space: pre !important;
@@ -892,6 +892,10 @@ div.align-right {
 
 /* div.align-center * { */
 /*   text-align: left } */
+
+ul.simple > li {
+  margin-bottom: 0.5em }
+
 ol.simple, ul.simple {
   margin-bottom: 1em; }
 
@@ -1155,7 +1159,7 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
       <li><a class="reference" href="#LibmyoHub"
     title="LibmyoHub = pointer"><wbr />Libmyo<wbr />Hub</a></li>
   <li><a class="reference" href="#LibmyoResult"
-    title="LibmyoResult = enum 
+    title="LibmyoResult = enum
   success,                    ## The proc was successful
   error,                      ## An error occured (use `libmyoErrorXXX` to get error details)
   errorInvalidArgument,       ## An argument was invalid
@@ -1163,51 +1167,46 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
   <li><a class="reference" href="#LibmyoErrorDetails"
     title="LibmyoErrorDetails = pointer"><wbr />Libmyo<wbr />Error<wbr />Details</a></li>
   <li><a class="reference" href="#LibmyoLockingPolicy"
-    title="LibmyoLockingPolicy = enum 
+    title="LibmyoLockingPolicy = enum
   none,                       ## Pose events are always sent
   standard                    ## Pose events are not sent while a Myo is locked"><wbr />Libmyo<wbr />Locking<wbr />Policy</a></li>
   <li><a class="reference" href="#LibmyoMyo"
     title="LibmyoMyo = pointer"><wbr />Libmyo<wbr />Myo</a></li>
   <li><a class="reference" href="#LibmyoVibrationType"
-    title="LibmyoVibrationType = enum 
+    title="LibmyoVibrationType = enum
   short, medium, long"><wbr />Libmyo<wbr />Vibration<wbr />Type</a></li>
   <li><a class="reference" href="#LibmyoStreamEmg"
-    title="LibmyoStreamEmg = enum 
+    title="LibmyoStreamEmg = enum
   disabled,                   ## Do not send EMG data
   enabled                     ## Send EMG data"><wbr />Libmyo<wbr />Stream<wbr />Emg</a></li>
   <li><a class="reference" href="#LibmyoPose"
-    title="LibmyoPose = enum 
-  rest = 0,                   ## Rest pose
-  fist = 1,                   ## User is making a fist
-  waveIn = 2, ## User has an open palm rotated towards the posterior of their
-              ## wrist
-  waveOut = 3, ## User has an open palm rotated towards the anterior of their
-               ## wrist
-  fingersSpread = 4, ## User has an open palm with their fingers spread away
-                     ## from each other
-  doubleTap = 5, ## User tapped their thumb and middle finger together twice
-                 ## in succession
+    title="LibmyoPose = enum
+  rest = 0,                     ## Rest pose
+  fist = 1,                     ## User is making a fist
+  waveIn = 2,                   ## User has an open palm rotated towards the posterior of their wrist
+  waveOut = 3,                  ## User has an open palm rotated towards the anterior of their wrist
+  fingersSpread = 4,            ## User has an open palm with their fingers spread away from each other
+  doubleTap = 5,                ## User tapped their thumb and middle finger together twice in succession
   numPoses,                   ## Number of poses supported; not a valid pose
   unknown = 0x0000FFFF"><wbr />Libmyo<wbr />Pose</a></li>
   <li><a class="reference" href="#LibmyoUnlockType"
-    title="LibmyoUnlockType = enum 
-  timed = 0,                  ## Unlock for a fixed period of time
-  hold = 1                    ## Unlock until explicitly told to re-lock"><wbr />Libmyo<wbr />Unlock<wbr />Type</a></li>
+    title="LibmyoUnlockType = enum
+  timed = 0,                    ## Unlock for a fixed period of time
+  hold = 1                      ## Unlock until explicitly told to re-lock"><wbr />Libmyo<wbr />Unlock<wbr />Type</a></li>
   <li><a class="reference" href="#LibmyoUserActionType"
-    title="LibmyoUserActionType = enum 
-  single = 0                  ## User did a single, discrete action, such as pausing a video"><wbr />Libmyo<wbr />User<wbr />Action<wbr />Type</a></li>
+    title="LibmyoUserActionType = enum
+  single = 0                    ## User did a single, discrete action, such as pausing a video"><wbr />Libmyo<wbr />User<wbr />Action<wbr />Type</a></li>
   <li><a class="reference" href="#LibmyoEventType"
-    title="LibmyoEventType = enum 
+    title="LibmyoEventType = enum
   paired,                     ## Successfully paired with a Myo
   unpaired,                   ## Successfully unpaired from a Myo
   connected,                  ## A Myo has successfully connected
   disconnected,               ## A Myo has been disconnected
-  armSynced,                  ## A Myo has recognized that the sync gesture has
-                              ## been successfully performed
+  armSynced, ## A Myo has recognized that the sync gesture has been successfully
+            ## performed
   armUnsynced,                ## A Myo has been moved or removed from the arm
   orientation,                ## Orientation data has been received
-  pose,                       ## A change in pose has been detected (see
-                              ## `Libmyo_Pose &lt;#Libmyo_Pose&gt;`_)
+  pose,                       ## A change in pose has been detected (see `Libmyo_Pose &lt;#Libmyo_Pose&gt;`_)
   rssi,                       ## An RSSI value has been received
   unlocked,                   ## A Myo has become unlocked
   locked,                     ## A Myo has become locked
@@ -1215,33 +1214,33 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
   <li><a class="reference" href="#LibmyoEvent"
     title="LibmyoEvent = pointer"><wbr />Libmyo<wbr />Event</a></li>
   <li><a class="reference" href="#LibmyoVersionComponent"
-    title="LibmyoVersionComponent = enum 
+    title="LibmyoVersionComponent = enum
   major,                      ## Major version
   minor,                      ## Minor version
   patch,                      ## Patch version
-  hardware_rev                ## Hardware revision"><wbr />Libmyo<wbr />Version<wbr />Component</a></li>
+  hardwareRev                 ## Hardware revision"><wbr />Libmyo<wbr />Version<wbr />Component</a></li>
   <li><a class="reference" href="#LibmyoHardwareRev"
-    title="LibmyoHardwareRev = enum 
-  revC = 1,                   ## Alpha units
-  revD = 2                    ## Consumer units"><wbr />Libmyo<wbr />Hardware<wbr />Rev</a></li>
+    title="LibmyoHardwareRev = enum
+  revC = 1,                     ## Alpha units
+  revD = 2                      ## Consumer units"><wbr />Libmyo<wbr />Hardware<wbr />Rev</a></li>
   <li><a class="reference" href="#LibmyoArm"
-    title="LibmyoArm = enum 
+    title="LibmyoArm = enum
   right,                      ## Myo is on the right arm
   left,                       ## Myo is on the left arm
   unknown                     ## Unknown arm"><wbr />Libmyo<wbr />Arm</a></li>
   <li><a class="reference" href="#LibmyoXDirection"
-    title="LibmyoXDirection = enum 
+    title="LibmyoXDirection = enum
   towardWrist,                ## Myo&#x27;s +x axis is pointing toward the user&#x27;s wrist
   towardElbow,                ## Myo&#x27;s +x axis is pointing toward the user&#x27;s elbow
   unknown                     ## Unknown +x axis direction"><wbr />Libmyo<wbr />XDirection</a></li>
   <li><a class="reference" href="#LibmyoOrientationIndex"
-    title="LibmyoOrientationIndex = enum 
-  x = 0,                      ## First component of the quaternion&#x27;s vector part
-  y = 1,                      ## Second component of the quaternion&#x27;s vector part
-  z = 2,                      ## Third component of the quaternion&#x27;s vector part
-  w = 3                       ## Scalar component of the quaternion"><wbr />Libmyo<wbr />Orientation<wbr />Index</a></li>
+    title="LibmyoOrientationIndex = enum
+  x = 0,                        ## First component of the quaternion&#x27;s vector part
+  y = 1,                        ## Second component of the quaternion&#x27;s vector part
+  z = 2,                        ## Third component of the quaternion&#x27;s vector part
+  w = 3                         ## Scalar component of the quaternion"><wbr />Libmyo<wbr />Orientation<wbr />Index</a></li>
   <li><a class="reference" href="#LibmyoHandlerResult"
-    title="LibmyoHandlerResult = enum 
+    title="LibmyoHandlerResult = enum
   continueProcessing,         ## Continue processing events
   stop                        ## Stop processing events"><wbr />Libmyo<wbr />Handler<wbr />Result</a></li>
   <li><a class="reference" href="#LibmyoHandler"
@@ -1259,28 +1258,27 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
   <li><a class="reference" href="#libmyoFreeErrorDetails,LibmyoErrorDetails"
     title="libmyoFreeErrorDetails(details: LibmyoErrorDetails)"><wbr />libmyo<wbr />Free<wbr />Error<wbr />Details</a></li>
   <li><a class="reference" href="#libmyoInitHub,ptr.LibmyoHub,cstring,ptr.LibmyoErrorDetails"
-    title="libmyoInitHub(outHub: ptr LibmyoHub; appId: cstring; 
-              outError: ptr LibmyoErrorDetails): LibmyoResult"><wbr />libmyo<wbr />Init<wbr />Hub</a></li>
+    title="libmyoInitHub(outHub: ptr LibmyoHub; appId: cstring; outError: ptr LibmyoErrorDetails): LibmyoResult"><wbr />libmyo<wbr />Init<wbr />Hub</a></li>
   <li><a class="reference" href="#libmyoShutdownHub,LibmyoHub,ptr.LibmyoErrorDetails"
     title="libmyoShutdownHub(hub: LibmyoHub; outError: ptr LibmyoErrorDetails): LibmyoResult"><wbr />libmyo<wbr />Shutdown<wbr />Hub</a></li>
   <li><a class="reference" href="#libmyoSetLockingPolicy,LibmyoHub,LibmyoLockingPolicy,ptr.LibmyoErrorDetails"
-    title="libmyoSetLockingPolicy(hub: LibmyoHub; policy: LibmyoLockingPolicy; 
+    title="libmyoSetLockingPolicy(hub: LibmyoHub; policy: LibmyoLockingPolicy;
                        outError: ptr LibmyoErrorDetails): LibmyoResult"><wbr />libmyo<wbr />Set<wbr />Locking<wbr />Policy</a></li>
   <li><a class="reference" href="#libmyoVibrate,LibmyoMyo,LibmyoVibrationType,ptr.LibmyoErrorDetails"
-    title="libmyoVibrate(myo: LibmyoMyo; vibrationType: LibmyoVibrationType; 
+    title="libmyoVibrate(myo: LibmyoMyo; vibrationType: LibmyoVibrationType;
               outError: ptr LibmyoErrorDetails): LibmyoResult"><wbr />libmyo<wbr />Vibrate</a></li>
   <li><a class="reference" href="#libmyoRequestRssi,LibmyoMyo,ptr.LibmyoErrorDetails"
     title="libmyoRequestRssi(myo: LibmyoMyo; outError: ptr LibmyoErrorDetails): LibmyoResult"><wbr />libmyo<wbr />Request<wbr />Rssi</a></li>
   <li><a class="reference" href="#libmyoSetStreamEmg,LibmyoMyo,LibmyoStreamEmg,ptr.LibmyoErrorDetails"
-    title="libmyoSetStreamEmg(myo: LibmyoMyo; emg: LibmyoStreamEmg; 
+    title="libmyoSetStreamEmg(myo: LibmyoMyo; emg: LibmyoStreamEmg;
                    outError: ptr LibmyoErrorDetails): LibmyoResult"><wbr />libmyo<wbr />Set<wbr />Stream<wbr />Emg</a></li>
   <li><a class="reference" href="#libmyoMyoUnlock,LibmyoMyo,LibmyoUnlockType,ptr.LibmyoErrorDetails"
-    title="libmyoMyoUnlock(myo: LibmyoMyo; unlockType: LibmyoUnlockType; 
+    title="libmyoMyoUnlock(myo: LibmyoMyo; unlockType: LibmyoUnlockType;
                 outError: ptr LibmyoErrorDetails): LibmyoResult"><wbr />libmyo<wbr />Myo<wbr />Unlock</a></li>
   <li><a class="reference" href="#libmyoMyoLock,LibmyoMyo,ptr.LibmyoErrorDetails"
     title="libmyoMyoLock(myo: LibmyoMyo; outError: ptr LibmyoErrorDetails): LibmyoResult"><wbr />libmyo<wbr />Myo<wbr />Lock</a></li>
   <li><a class="reference" href="#libmyoMyoNotifyUserAction,LibmyoMyo,LibmyoUserActionType,ptr.LibmyoErrorDetails"
-    title="libmyoMyoNotifyUserAction(myo: LibmyoMyo; actionType: LibmyoUserActionType; 
+    title="libmyoMyoNotifyUserAction(myo: LibmyoMyo; actionType: LibmyoUserActionType;
                           outError: ptr LibmyoErrorDetails): LibmyoResult"><wbr />libmyo<wbr />Myo<wbr />Notify<wbr />User<wbr />Action</a></li>
   <li><a class="reference" href="#libmyoEventGetType,LibmyoEvent"
     title="libmyoEventGetType(event: LibmyoEvent): LibmyoEventType"><wbr />libmyo<wbr />Event<wbr />Get<wbr />Type</a></li>
@@ -1289,7 +1287,7 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
   <li><a class="reference" href="#libmyoEventGetMyo,LibmyoEvent"
     title="libmyoEventGetMyo(event: LibmyoEvent): LibmyoMyo"><wbr />libmyo<wbr />Event<wbr />Get<wbr />Myo</a></li>
   <li><a class="reference" href="#libmyoEventGetFirmwareVersion,LibmyoEvent,LibmyoVersionComponent"
-    title="libmyoEventGetFirmwareVersion(event: LibmyoEvent; 
+    title="libmyoEventGetFirmwareVersion(event: LibmyoEvent;
                               component: LibmyoVersionComponent): cint"><wbr />libmyo<wbr />Event<wbr />Get<wbr />Firmware<wbr />Version</a></li>
   <li><a class="reference" href="#libmyoEventGetArm,LibmyoEvent"
     title="libmyoEventGetArm(event: LibmyoEvent): LibmyoArm"><wbr />libmyo<wbr />Event<wbr />Get<wbr />Arm</a></li>
@@ -1305,11 +1303,11 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
     title="libmyoEventGetPose(event: LibmyoEvent): LibmyoPose"><wbr />libmyo<wbr />Event<wbr />Get<wbr />Pose</a></li>
   <li><a class="reference" href="#libmyoEventGetRssi,LibmyoEvent"
     title="libmyoEventGetRssi(event: LibmyoEvent): cschar"><wbr />libmyo<wbr />Event<wbr />Get<wbr />Rssi</a></li>
-  <li><a class="reference" href="#libmyoEventGetEmg,LibmyoEvent,cuint"
-    title="libmyoEventGetEmg(event: LibmyoEvent; sensor: cuint): cschar"><wbr />libmyo<wbr />Event<wbr />Get<wbr />Emg</a></li>
+  <li><a class="reference" href="#libmyoEventGetEmg,LibmyoEvent,cint"
+    title="libmyoEventGetEmg(event: LibmyoEvent; sensor: cint): cschar"><wbr />libmyo<wbr />Event<wbr />Get<wbr />Emg</a></li>
   <li><a class="reference" href="#libmyoRun,LibmyoHub,cint,LibmyoHandler,pointer,ptr.LibmyoErrorDetails"
-    title="libmyoRun(hub: LibmyoHub; duration: cint; handler: LibmyoHandler; 
-          userData: pointer; outError: ptr LibmyoErrorDetails): LibmyoResult"><wbr />libmyo<wbr />Run</a></li>
+    title="libmyoRun(hub: LibmyoHub; duration: cint; handler: LibmyoHandler; userData: pointer;
+          outError: ptr LibmyoErrorDetails): LibmyoResult"><wbr />libmyo<wbr />Run</a></li>
 
   </ul>
 </li>
@@ -1318,7 +1316,7 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
 
   </div>
   <div class="nine columns" id="content">
-  <p class="module-desc"><p><em>io-myo</em> - Nim bindings for the Thalmic Labs Myo gesture control armband SDK.</p>
+  <p class="module-desc"><p><em>myo</em> - Nim bindings for the Thalmic Labs Myo gesture control armband SDK.</p>
 <p>This file is part of the <a class="reference external" href="http://nimio.us">Nim I/O</a> package collection. See the file LICENSE included in this distribution for licensing details. GitHub pull requests are encouraged. (c) 2015 Headcrash Industries LLC.</p>
 </p>
   <div class="section" id="7">
@@ -1330,203 +1328,184 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
 <p>The hub provides access to one or more Myo armbands. On Windows and MacOS, the hub is typically the Myo Connect application that also takes are of things like pairing and global user preferences.</p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/nimious/io-myo/tree/master/src/libmyo.nim#L22"
+href="https://github.com/nimious/myo/tree/master/src/libmyo.nim#L22"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
-<dt id="LibmyoResult"><a name="LibmyoResult"></a><pre><span class="Identifier">LibmyoResult</span> <span class="Other">=</span> <span class="Keyword">enum</span> 
+<dt id="LibmyoResult"><a name="LibmyoResult"></a><pre><span class="Identifier">LibmyoResult</span> <span class="Other">=</span> <span class="Keyword">enum</span>
   <span class="Identifier">success</span><span class="Other">,</span>                    <span class="Comment">## The proc was successful</span>
   <span class="Identifier">error</span><span class="Other">,</span>                      <span class="Comment">## An error occured (use `libmyoErrorXXX` to get error details)</span>
   <span class="Identifier">errorInvalidArgument</span><span class="Other">,</span>       <span class="Comment">## An argument was invalid</span>
   <span class="Identifier">errorRuntime</span>                <span class="Comment">## Runtime error occured</span></pre></dt>
 <dd>
-
 Possible return values for all libmyo procs that may fail.
 &nbsp;&nbsp;<a
-href="https://github.com/nimious/io-myo/tree/master/src/libmyo.nim#L30"
+href="https://github.com/nimious/myo/tree/master/src/libmyo.nim#L30"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="LibmyoErrorDetails"><a name="LibmyoErrorDetails"></a><pre><span class="Identifier">LibmyoErrorDetails</span> <span class="Other">=</span> <span class="Identifier">pointer</span></pre></dt>
 <dd>
 Opaque handle to detailed error information.
 &nbsp;&nbsp;<a
-href="https://github.com/nimious/io-myo/tree/master/src/libmyo.nim#L38"
+href="https://github.com/nimious/myo/tree/master/src/libmyo.nim#L42"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
-<dt id="LibmyoLockingPolicy"><a name="LibmyoLockingPolicy"></a><pre><span class="Identifier">LibmyoLockingPolicy</span> <span class="Other">=</span> <span class="Keyword">enum</span> 
+<dt id="LibmyoLockingPolicy"><a name="LibmyoLockingPolicy"></a><pre><span class="Identifier">LibmyoLockingPolicy</span> <span class="Other">=</span> <span class="Keyword">enum</span>
   <span class="Identifier">none</span><span class="Other">,</span>                       <span class="Comment">## Pose events are always sent</span>
   <span class="Identifier">standard</span>                    <span class="Comment">## Pose events are not sent while a Myo is locked</span></pre></dt>
 <dd>
-
 Supported locking policies.
 &nbsp;&nbsp;<a
-href="https://github.com/nimious/io-myo/tree/master/src/libmyo.nim#L118"
+href="https://github.com/nimious/myo/tree/master/src/libmyo.nim#L122"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="LibmyoMyo"><a name="LibmyoMyo"></a><pre><span class="Identifier">LibmyoMyo</span> <span class="Other">=</span> <span class="Identifier">pointer</span></pre></dt>
 <dd>
 Opaque type corresponding to a known Myo device.
 &nbsp;&nbsp;<a
-href="https://github.com/nimious/io-myo/tree/master/src/libmyo.nim#L142"
+href="https://github.com/nimious/myo/tree/master/src/libmyo.nim#L148"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
-<dt id="LibmyoVibrationType"><a name="LibmyoVibrationType"></a><pre><span class="Identifier">LibmyoVibrationType</span> <span class="Other">=</span> <span class="Keyword">enum</span> 
+<dt id="LibmyoVibrationType"><a name="LibmyoVibrationType"></a><pre><span class="Identifier">LibmyoVibrationType</span> <span class="Other">=</span> <span class="Keyword">enum</span>
   <span class="Identifier">short</span><span class="Other">,</span> <span class="Identifier">medium</span><span class="Other">,</span> <span class="Identifier">long</span></pre></dt>
 <dd>
-
 Types of vibration.
 &nbsp;&nbsp;<a
-href="https://github.com/nimious/io-myo/tree/master/src/libmyo.nim#L146"
+href="https://github.com/nimious/myo/tree/master/src/libmyo.nim#L151"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
-<dt id="LibmyoStreamEmg"><a name="LibmyoStreamEmg"></a><pre><span class="Identifier">LibmyoStreamEmg</span> <span class="Other">=</span> <span class="Keyword">enum</span> 
+<dt id="LibmyoStreamEmg"><a name="LibmyoStreamEmg"></a><pre><span class="Identifier">LibmyoStreamEmg</span> <span class="Other">=</span> <span class="Keyword">enum</span>
   <span class="Identifier">disabled</span><span class="Other">,</span>                   <span class="Comment">## Do not send EMG data</span>
   <span class="Identifier">enabled</span>                     <span class="Comment">## Send EMG data</span></pre></dt>
 <dd>
-
 EMG streaming modes.
 &nbsp;&nbsp;<a
-href="https://github.com/nimious/io-myo/tree/master/src/libmyo.nim#L184"
+href="https://github.com/nimious/myo/tree/master/src/libmyo.nim#L189"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
-<dt id="LibmyoPose"><a name="LibmyoPose"></a><pre><span class="Identifier">LibmyoPose</span> <span class="Other">=</span> <span class="Keyword">enum</span> 
-  <span class="Identifier">rest</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">,</span>                   <span class="Comment">## Rest pose</span>
-  <span class="Identifier">fist</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">,</span>                   <span class="Comment">## User is making a fist</span>
-  <span class="Identifier">waveIn</span> <span class="Other">=</span> <span class="DecNumber">2</span><span class="Other">,</span> <span class="Comment">## User has an open palm rotated towards the posterior of their</span>
-              <span class="Comment">## wrist</span>
-  <span class="Identifier">waveOut</span> <span class="Other">=</span> <span class="DecNumber">3</span><span class="Other">,</span> <span class="Comment">## User has an open palm rotated towards the anterior of their</span>
-               <span class="Comment">## wrist</span>
-  <span class="Identifier">fingersSpread</span> <span class="Other">=</span> <span class="DecNumber">4</span><span class="Other">,</span> <span class="Comment">## User has an open palm with their fingers spread away</span>
-                     <span class="Comment">## from each other</span>
-  <span class="Identifier">doubleTap</span> <span class="Other">=</span> <span class="DecNumber">5</span><span class="Other">,</span> <span class="Comment">## User tapped their thumb and middle finger together twice</span>
-                 <span class="Comment">## in succession</span>
+<dt id="LibmyoPose"><a name="LibmyoPose"></a><pre><span class="Identifier">LibmyoPose</span> <span class="Other">=</span> <span class="Keyword">enum</span>
+  <span class="Identifier">rest</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">,</span>                     <span class="Comment">## Rest pose</span>
+  <span class="Identifier">fist</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">,</span>                     <span class="Comment">## User is making a fist</span>
+  <span class="Identifier">waveIn</span> <span class="Other">=</span> <span class="DecNumber">2</span><span class="Other">,</span>                   <span class="Comment">## User has an open palm rotated towards the posterior of their wrist</span>
+  <span class="Identifier">waveOut</span> <span class="Other">=</span> <span class="DecNumber">3</span><span class="Other">,</span>                  <span class="Comment">## User has an open palm rotated towards the anterior of their wrist</span>
+  <span class="Identifier">fingersSpread</span> <span class="Other">=</span> <span class="DecNumber">4</span><span class="Other">,</span>            <span class="Comment">## User has an open palm with their fingers spread away from each other</span>
+  <span class="Identifier">doubleTap</span> <span class="Other">=</span> <span class="DecNumber">5</span><span class="Other">,</span>                <span class="Comment">## User tapped their thumb and middle finger together twice in succession</span>
   <span class="Identifier">numPoses</span><span class="Other">,</span>                   <span class="Comment">## Number of poses supported; not a valid pose</span>
   <span class="Identifier">unknown</span> <span class="Other">=</span> <span class="DecNumber">0x0000FFFF</span></pre></dt>
 <dd>
-
 Supported poses.
 &nbsp;&nbsp;<a
-href="https://github.com/nimious/io-myo/tree/master/src/libmyo.nim#L207"
+href="https://github.com/nimious/myo/tree/master/src/libmyo.nim#L214"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
-<dt id="LibmyoUnlockType"><a name="LibmyoUnlockType"></a><pre><span class="Identifier">LibmyoUnlockType</span> <span class="Other">=</span> <span class="Keyword">enum</span> 
-  <span class="Identifier">timed</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">,</span>                  <span class="Comment">## Unlock for a fixed period of time</span>
-  <span class="Identifier">hold</span> <span class="Other">=</span> <span class="DecNumber">1</span>                    <span class="Comment">## Unlock until explicitly told to re-lock</span></pre></dt>
+<dt id="LibmyoUnlockType"><a name="LibmyoUnlockType"></a><pre><span class="Identifier">LibmyoUnlockType</span> <span class="Other">=</span> <span class="Keyword">enum</span>
+  <span class="Identifier">timed</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">,</span>                    <span class="Comment">## Unlock for a fixed period of time</span>
+  <span class="Identifier">hold</span> <span class="Other">=</span> <span class="DecNumber">1</span>                      <span class="Comment">## Unlock until explicitly told to re-lock</span></pre></dt>
 <dd>
-
 Valid unlock types.
 &nbsp;&nbsp;<a
-href="https://github.com/nimious/io-myo/tree/master/src/libmyo.nim#L223"
+href="https://github.com/nimious/myo/tree/master/src/libmyo.nim#L233"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
-<dt id="LibmyoUserActionType"><a name="LibmyoUserActionType"></a><pre><span class="Identifier">LibmyoUserActionType</span> <span class="Other">=</span> <span class="Keyword">enum</span> 
-  <span class="Identifier">single</span> <span class="Other">=</span> <span class="DecNumber">0</span>                  <span class="Comment">## User did a single, discrete action, such as pausing a video</span></pre></dt>
+<dt id="LibmyoUserActionType"><a name="LibmyoUserActionType"></a><pre><span class="Identifier">LibmyoUserActionType</span> <span class="Other">=</span> <span class="Keyword">enum</span>
+  <span class="Identifier">single</span> <span class="Other">=</span> <span class="DecNumber">0</span>                    <span class="Comment">## User did a single, discrete action, such as pausing a video</span></pre></dt>
 <dd>
-
 User action types.
 &nbsp;&nbsp;<a
-href="https://github.com/nimious/io-myo/tree/master/src/libmyo.nim#L267"
+href="https://github.com/nimious/myo/tree/master/src/libmyo.nim#L279"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
-<dt id="LibmyoEventType"><a name="LibmyoEventType"></a><pre><span class="Identifier">LibmyoEventType</span> <span class="Other">=</span> <span class="Keyword">enum</span> 
+<dt id="LibmyoEventType"><a name="LibmyoEventType"></a><pre><span class="Identifier">LibmyoEventType</span> <span class="Other">=</span> <span class="Keyword">enum</span>
   <span class="Identifier">paired</span><span class="Other">,</span>                     <span class="Comment">## Successfully paired with a Myo</span>
   <span class="Identifier">unpaired</span><span class="Other">,</span>                   <span class="Comment">## Successfully unpaired from a Myo</span>
   <span class="Identifier">connected</span><span class="Other">,</span>                  <span class="Comment">## A Myo has successfully connected</span>
   <span class="Identifier">disconnected</span><span class="Other">,</span>               <span class="Comment">## A Myo has been disconnected</span>
-  <span class="Identifier">armSynced</span><span class="Other">,</span>                  <span class="Comment">## A Myo has recognized that the sync gesture has</span>
-                              <span class="Comment">## been successfully performed</span>
+  <span class="Identifier">armSynced</span><span class="Other">,</span> <span class="Comment">## A Myo has recognized that the sync gesture has been successfully</span>
+            <span class="Comment">## performed</span>
   <span class="Identifier">armUnsynced</span><span class="Other">,</span>                <span class="Comment">## A Myo has been moved or removed from the arm</span>
   <span class="Identifier">orientation</span><span class="Other">,</span>                <span class="Comment">## Orientation data has been received</span>
-  <span class="Identifier">pose</span><span class="Other">,</span>                       <span class="Comment">## A change in pose has been detected (see</span>
-                              <span class="Comment">## `Libmyo_Pose &lt;#Libmyo_Pose&gt;`_)</span>
+  <span class="Identifier">pose</span><span class="Other">,</span>                       <span class="Comment">## A change in pose has been detected (see `Libmyo_Pose &lt;#Libmyo_Pose&gt;`_)</span>
   <span class="Identifier">rssi</span><span class="Other">,</span>                       <span class="Comment">## An RSSI value has been received</span>
   <span class="Identifier">unlocked</span><span class="Other">,</span>                   <span class="Comment">## A Myo has become unlocked</span>
   <span class="Identifier">locked</span><span class="Other">,</span>                     <span class="Comment">## A Myo has become locked</span>
   <span class="Identifier">emg</span>                         <span class="Comment">## EMG data has been received</span></pre></dt>
 <dd>
-
 Types of events.
 &nbsp;&nbsp;<a
-href="https://github.com/nimious/io-myo/tree/master/src/libmyo.nim#L290"
+href="https://github.com/nimious/myo/tree/master/src/libmyo.nim#L303"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="LibmyoEvent"><a name="LibmyoEvent"></a><pre><span class="Identifier">LibmyoEvent</span> <span class="Other">=</span> <span class="Identifier">pointer</span></pre></dt>
 <dd>
 Information about an event.
 &nbsp;&nbsp;<a
-href="https://github.com/nimious/io-myo/tree/master/src/libmyo.nim#L308"
+href="https://github.com/nimious/myo/tree/master/src/libmyo.nim#L331"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
-<dt id="LibmyoVersionComponent"><a name="LibmyoVersionComponent"></a><pre><span class="Identifier">LibmyoVersionComponent</span> <span class="Other">=</span> <span class="Keyword">enum</span> 
+<dt id="LibmyoVersionComponent"><a name="LibmyoVersionComponent"></a><pre><span class="Identifier">LibmyoVersionComponent</span> <span class="Other">=</span> <span class="Keyword">enum</span>
   <span class="Identifier">major</span><span class="Other">,</span>                      <span class="Comment">## Major version</span>
   <span class="Identifier">minor</span><span class="Other">,</span>                      <span class="Comment">## Minor version</span>
   <span class="Identifier">patch</span><span class="Other">,</span>                      <span class="Comment">## Patch version</span>
-  <span class="Identifier">hardware_rev</span>                <span class="Comment">## Hardware revision</span></pre></dt>
+  <span class="Identifier">hardwareRev</span>                 <span class="Comment">## Hardware revision</span></pre></dt>
 <dd>
-
 Version number components.
 &nbsp;&nbsp;<a
-href="https://github.com/nimious/io-myo/tree/master/src/libmyo.nim#L345"
+href="https://github.com/nimious/myo/tree/master/src/libmyo.nim#L368"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
-<dt id="LibmyoHardwareRev"><a name="LibmyoHardwareRev"></a><pre><span class="Identifier">LibmyoHardwareRev</span> <span class="Other">=</span> <span class="Keyword">enum</span> 
-  <span class="Identifier">revC</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">,</span>                   <span class="Comment">## Alpha units</span>
-  <span class="Identifier">revD</span> <span class="Other">=</span> <span class="DecNumber">2</span>                    <span class="Comment">## Consumer units</span></pre></dt>
+<dt id="LibmyoHardwareRev"><a name="LibmyoHardwareRev"></a><pre><span class="Identifier">LibmyoHardwareRev</span> <span class="Other">=</span> <span class="Keyword">enum</span>
+  <span class="Identifier">revC</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">,</span>                     <span class="Comment">## Alpha units</span>
+  <span class="Identifier">revD</span> <span class="Other">=</span> <span class="DecNumber">2</span>                      <span class="Comment">## Consumer units</span></pre></dt>
 <dd>
-
 Hardware revisions.
 &nbsp;&nbsp;<a
-href="https://github.com/nimious/io-myo/tree/master/src/libmyo.nim#L353"
+href="https://github.com/nimious/myo/tree/master/src/libmyo.nim#L380"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
-<dt id="LibmyoArm"><a name="LibmyoArm"></a><pre><span class="Identifier">LibmyoArm</span> <span class="Other">=</span> <span class="Keyword">enum</span> 
+<dt id="LibmyoArm"><a name="LibmyoArm"></a><pre><span class="Identifier">LibmyoArm</span> <span class="Other">=</span> <span class="Keyword">enum</span>
   <span class="Identifier">right</span><span class="Other">,</span>                      <span class="Comment">## Myo is on the right arm</span>
   <span class="Identifier">left</span><span class="Other">,</span>                       <span class="Comment">## Myo is on the left arm</span>
   <span class="Identifier">unknown</span>                     <span class="Comment">## Unknown arm</span></pre></dt>
 <dd>
-
 Enumeration identifying a right arm or left arm
 &nbsp;&nbsp;<a
-href="https://github.com/nimious/io-myo/tree/master/src/libmyo.nim#L376"
+href="https://github.com/nimious/myo/tree/master/src/libmyo.nim#L405"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
-<dt id="LibmyoXDirection"><a name="LibmyoXDirection"></a><pre><span class="Identifier">LibmyoXDirection</span> <span class="Other">=</span> <span class="Keyword">enum</span> 
+<dt id="LibmyoXDirection"><a name="LibmyoXDirection"></a><pre><span class="Identifier">LibmyoXDirection</span> <span class="Other">=</span> <span class="Keyword">enum</span>
   <span class="Identifier">towardWrist</span><span class="Other">,</span>                <span class="Comment">## Myo's +x axis is pointing toward the user's wrist</span>
   <span class="Identifier">towardElbow</span><span class="Other">,</span>                <span class="Comment">## Myo's +x axis is pointing toward the user's elbow</span>
   <span class="Identifier">unknown</span>                     <span class="Comment">## Unknown +x axis direction</span></pre></dt>
 <dd>
-
 Possible directions for Myo's +x axis relative to a user's arm.
 &nbsp;&nbsp;<a
-href="https://github.com/nimious/io-myo/tree/master/src/libmyo.nim#L396"
+href="https://github.com/nimious/myo/tree/master/src/libmyo.nim#L428"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
-<dt id="LibmyoOrientationIndex"><a name="LibmyoOrientationIndex"></a><pre><span class="Identifier">LibmyoOrientationIndex</span> <span class="Other">=</span> <span class="Keyword">enum</span> 
-  <span class="Identifier">x</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">,</span>                      <span class="Comment">## First component of the quaternion's vector part</span>
-  <span class="Identifier">y</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">,</span>                      <span class="Comment">## Second component of the quaternion's vector part</span>
-  <span class="Identifier">z</span> <span class="Other">=</span> <span class="DecNumber">2</span><span class="Other">,</span>                      <span class="Comment">## Third component of the quaternion's vector part</span>
-  <span class="Identifier">w</span> <span class="Other">=</span> <span class="DecNumber">3</span>                       <span class="Comment">## Scalar component of the quaternion</span></pre></dt>
+<dt id="LibmyoOrientationIndex"><a name="LibmyoOrientationIndex"></a><pre><span class="Identifier">LibmyoOrientationIndex</span> <span class="Other">=</span> <span class="Keyword">enum</span>
+  <span class="Identifier">x</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">,</span>                        <span class="Comment">## First component of the quaternion's vector part</span>
+  <span class="Identifier">y</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">,</span>                        <span class="Comment">## Second component of the quaternion's vector part</span>
+  <span class="Identifier">z</span> <span class="Other">=</span> <span class="DecNumber">2</span><span class="Other">,</span>                        <span class="Comment">## Third component of the quaternion's vector part</span>
+  <span class="Identifier">w</span> <span class="Other">=</span> <span class="DecNumber">3</span>                         <span class="Comment">## Scalar component of the quaternion</span></pre></dt>
 <dd>
-
 Index into orientation data, which is provided as a quaternion.
 &nbsp;&nbsp;<a
-href="https://github.com/nimious/io-myo/tree/master/src/libmyo.nim#L418"
+href="https://github.com/nimious/myo/tree/master/src/libmyo.nim#L453"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
-<dt id="LibmyoHandlerResult"><a name="LibmyoHandlerResult"></a><pre><span class="Identifier">LibmyoHandlerResult</span> <span class="Other">=</span> <span class="Keyword">enum</span> 
+<dt id="LibmyoHandlerResult"><a name="LibmyoHandlerResult"></a><pre><span class="Identifier">LibmyoHandlerResult</span> <span class="Other">=</span> <span class="Keyword">enum</span>
   <span class="Identifier">continueProcessing</span><span class="Other">,</span>         <span class="Comment">## Continue processing events</span>
   <span class="Identifier">stop</span>                        <span class="Comment">## Stop processing events</span></pre></dt>
 <dd>
-
 Return type for event handlers.
 &nbsp;&nbsp;<a
-href="https://github.com/nimious/io-myo/tree/master/src/libmyo.nim#L506"
+href="https://github.com/nimious/myo/tree/master/src/libmyo.nim#L545"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="LibmyoHandler"><a name="LibmyoHandler"></a><pre><span class="Identifier">LibmyoHandler</span> <span class="Other">=</span> <span class="Keyword">proc</span> <span class="Other">(</span><span class="Identifier">userData</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">;</span> <span class="Identifier">event</span><span class="Other">:</span> <span class="Identifier">LibmyoEvent</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">LibmyoHandlerResult</span></pre></dt>
 <dd>
 Callback function type to handle events as they occur from <a class="reference external" href="#libmyoRun">libmyoRun</a>.
 &nbsp;&nbsp;<a
-href="https://github.com/nimious/io-myo/tree/master/src/libmyo.nim#L513"
+href="https://github.com/nimious/myo/tree/master/src/libmyo.nim#L554"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 
@@ -1534,7 +1513,7 @@ class="link-seesrc" target="_blank">Source</a>
 <div class="section" id="12">
 <h1><a class="toc-backref" href="#12">Procs</a></h1>
 <dl class="item">
-<dt id="libmyoErrorCstring"><a name="libmyoErrorCstring,LibmyoErrorDetails"></a><pre><span class="Keyword">proc</span> <span class="Identifier">libmyoErrorCstring</span><span class="Other">(</span><span class="Identifier">details</span><span class="Other">:</span> <span class="Identifier">LibmyoErrorDetails</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cstring</span> <span class="Other">{.</span><span class="Identifier">cdecl</span><span class="Other">,</span> 
+<dt id="libmyoErrorCstring"><a name="libmyoErrorCstring,LibmyoErrorDetails"></a><pre><span class="Keyword">proc</span> <span class="Identifier">libmyoErrorCstring</span><span class="Other">(</span><span class="Identifier">details</span><span class="Other">:</span> <span class="Identifier">LibmyoErrorDetails</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cstring</span> <span class="Other">{.</span><span class="Identifier">cdecl</span><span class="Other">,</span>
     <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;libmyo_error_cstring&quot;</span><span class="Other">.}</span></pre></dt>
 <dd>
 Get a detailed error message for a given error.<dl class="docutils"><dt>details</dt>
@@ -1544,10 +1523,10 @@ Get a detailed error message for a given error.<dl class="docutils"><dt>details<
 </dl>
 
 &nbsp;&nbsp;<a
-href="https://github.com/nimious/io-myo/tree/master/src/libmyo.nim#L42"
+href="https://github.com/nimious/myo/tree/master/src/libmyo.nim#L46"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
-<dt id="libmyoErrorKind"><a name="libmyoErrorKind,LibmyoErrorDetails"></a><pre><span class="Keyword">proc</span> <span class="Identifier">libmyoErrorKind</span><span class="Other">(</span><span class="Identifier">details</span><span class="Other">:</span> <span class="Identifier">LibmyoErrorDetails</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">LibmyoResult</span> <span class="Other">{.</span><span class="Identifier">cdecl</span><span class="Other">,</span> 
+<dt id="libmyoErrorKind"><a name="libmyoErrorKind,LibmyoErrorDetails"></a><pre><span class="Keyword">proc</span> <span class="Identifier">libmyoErrorKind</span><span class="Other">(</span><span class="Identifier">details</span><span class="Other">:</span> <span class="Identifier">LibmyoErrorDetails</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">LibmyoResult</span> <span class="Other">{.</span><span class="Identifier">cdecl</span><span class="Other">,</span>
     <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;libmyo_error_kind&quot;</span><span class="Other">.}</span></pre></dt>
 <dd>
 Get the kind of error that occurred.<dl class="docutils"><dt>details</dt>
@@ -1557,22 +1536,22 @@ Get the kind of error that occurred.<dl class="docutils"><dt>details</dt>
 </dl>
 
 &nbsp;&nbsp;<a
-href="https://github.com/nimious/io-myo/tree/master/src/libmyo.nim#L52"
+href="https://github.com/nimious/myo/tree/master/src/libmyo.nim#L56"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
-<dt id="libmyoFreeErrorDetails"><a name="libmyoFreeErrorDetails,LibmyoErrorDetails"></a><pre><span class="Keyword">proc</span> <span class="Identifier">libmyoFreeErrorDetails</span><span class="Other">(</span><span class="Identifier">details</span><span class="Other">:</span> <span class="Identifier">LibmyoErrorDetails</span><span class="Other">)</span> <span class="Other">{.</span><span class="Identifier">cdecl</span><span class="Other">,</span> 
-    <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;libmyo_free_error_details&quot;</span><span class="Other">.}</span></pre></dt>
+<dt id="libmyoFreeErrorDetails"><a name="libmyoFreeErrorDetails,LibmyoErrorDetails"></a><pre><span class="Keyword">proc</span> <span class="Identifier">libmyoFreeErrorDetails</span><span class="Other">(</span><span class="Identifier">details</span><span class="Other">:</span> <span class="Identifier">LibmyoErrorDetails</span><span class="Other">)</span> <span class="Other">{.</span><span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">,</span>
+    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;libmyo_free_error_details&quot;</span><span class="Other">.}</span></pre></dt>
 <dd>
 Free the object associated with an error details handle.<dl class="docutils"><dt>details</dt>
 <dd>Handle to the error details to free</dd>
 </dl>
 
 &nbsp;&nbsp;<a
-href="https://github.com/nimious/io-myo/tree/master/src/libmyo.nim#L62"
+href="https://github.com/nimious/myo/tree/master/src/libmyo.nim#L66"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
-<dt id="libmyoInitHub"><a name="libmyoInitHub,ptr.LibmyoHub,cstring,ptr.LibmyoErrorDetails"></a><pre><span class="Keyword">proc</span> <span class="Identifier">libmyoInitHub</span><span class="Other">(</span><span class="Identifier">outHub</span><span class="Other">:</span> <span class="Keyword">ptr</span> <span class="Identifier">LibmyoHub</span><span class="Other">;</span> <span class="Identifier">appId</span><span class="Other">:</span> <span class="Identifier">cstring</span><span class="Other">;</span> 
-                   <span class="Identifier">outError</span><span class="Other">:</span> <span class="Keyword">ptr</span> <span class="Identifier">LibmyoErrorDetails</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">LibmyoResult</span> <span class="Other">{.</span><span class="Identifier">cdecl</span><span class="Other">,</span> 
+<dt id="libmyoInitHub"><a name="libmyoInitHub,ptr.LibmyoHub,cstring,ptr.LibmyoErrorDetails"></a><pre><span class="Keyword">proc</span> <span class="Identifier">libmyoInitHub</span><span class="Other">(</span><span class="Identifier">outHub</span><span class="Other">:</span> <span class="Keyword">ptr</span> <span class="Identifier">LibmyoHub</span><span class="Other">;</span> <span class="Identifier">appId</span><span class="Other">:</span> <span class="Identifier">cstring</span><span class="Other">;</span>
+                  <span class="Identifier">outError</span><span class="Other">:</span> <span class="Keyword">ptr</span> <span class="Identifier">LibmyoErrorDetails</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">LibmyoResult</span> <span class="Other">{.</span><span class="Identifier">cdecl</span><span class="Other">,</span>
     <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;libmyo_init_hub&quot;</span><span class="Other">.}</span></pre></dt>
 <dd>
 Initialize a connection to the hub.<dl class="docutils"><dt>outHub</dt>
@@ -1594,7 +1573,7 @@ Initialize a connection to the hub.<dl class="docutils"><dt>outHub</dt>
 <p>For example, if a company's domain is example.com and the application is named hello-world, one could use &quot;com.example.hello-world&quot; as a valid application identifier. <cite>appId</cite> can be <cite>nil</cite> or empty.</p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/nimious/io-myo/tree/master/src/libmyo.nim#L70"
+href="https://github.com/nimious/myo/tree/master/src/libmyo.nim#L74"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="libmyoShutdownHub"><a name="libmyoShutdownHub,LibmyoHub,ptr.LibmyoErrorDetails"></a><pre><span class="Keyword">proc</span> <span class="Identifier">libmyoShutdownHub</span><span class="Other">(</span><span class="Identifier">hub</span><span class="Other">:</span> <span class="Identifier">LibmyoHub</span><span class="Other">;</span> <span class="Identifier">outError</span><span class="Other">:</span> <span class="Keyword">ptr</span> <span class="Identifier">LibmyoErrorDetails</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">LibmyoResult</span> <span class="Other">{.</span>
@@ -1613,12 +1592,12 @@ Free resources allocated to a hub.<dl class="docutils"><dt>hub</dt>
 </dl>
 
 &nbsp;&nbsp;<a
-href="https://github.com/nimious/io-myo/tree/master/src/libmyo.nim#L102"
+href="https://github.com/nimious/myo/tree/master/src/libmyo.nim#L106"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
-<dt id="libmyoSetLockingPolicy"><a name="libmyoSetLockingPolicy,LibmyoHub,LibmyoLockingPolicy,ptr.LibmyoErrorDetails"></a><pre><span class="Keyword">proc</span> <span class="Identifier">libmyoSetLockingPolicy</span><span class="Other">(</span><span class="Identifier">hub</span><span class="Other">:</span> <span class="Identifier">LibmyoHub</span><span class="Other">;</span> <span class="Identifier">policy</span><span class="Other">:</span> <span class="Identifier">LibmyoLockingPolicy</span><span class="Other">;</span> 
-                            <span class="Identifier">outError</span><span class="Other">:</span> <span class="Keyword">ptr</span> <span class="Identifier">LibmyoErrorDetails</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">LibmyoResult</span> <span class="Other">{.</span>
-    <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;libmyo_set_locking_policy&quot;</span><span class="Other">.}</span></pre></dt>
+<dt id="libmyoSetLockingPolicy"><a name="libmyoSetLockingPolicy,LibmyoHub,LibmyoLockingPolicy,ptr.LibmyoErrorDetails"></a><pre><span class="Keyword">proc</span> <span class="Identifier">libmyoSetLockingPolicy</span><span class="Other">(</span><span class="Identifier">hub</span><span class="Other">:</span> <span class="Identifier">LibmyoHub</span><span class="Other">;</span> <span class="Identifier">policy</span><span class="Other">:</span> <span class="Identifier">LibmyoLockingPolicy</span><span class="Other">;</span>
+                           <span class="Identifier">outError</span><span class="Other">:</span> <span class="Keyword">ptr</span> <span class="Identifier">LibmyoErrorDetails</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">LibmyoResult</span> <span class="Other">{.</span><span class="Identifier">cdecl</span><span class="Other">,</span>
+    <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;libmyo_set_locking_policy&quot;</span><span class="Other">.}</span></pre></dt>
 <dd>
 Set the locking policy for Myos connected to the hub.<dl class="docutils"><dt>hub</dt>
 <dd>The hub to set the locking policy for</dd>
@@ -1635,11 +1614,11 @@ Set the locking policy for Myos connected to the hub.<dl class="docutils"><dt>hu
 </dl>
 
 &nbsp;&nbsp;<a
-href="https://github.com/nimious/io-myo/tree/master/src/libmyo.nim#L124"
+href="https://github.com/nimious/myo/tree/master/src/libmyo.nim#L130"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
-<dt id="libmyoVibrate"><a name="libmyoVibrate,LibmyoMyo,LibmyoVibrationType,ptr.LibmyoErrorDetails"></a><pre><span class="Keyword">proc</span> <span class="Identifier">libmyoVibrate</span><span class="Other">(</span><span class="Identifier">myo</span><span class="Other">:</span> <span class="Identifier">LibmyoMyo</span><span class="Other">;</span> <span class="Identifier">vibrationType</span><span class="Other">:</span> <span class="Identifier">LibmyoVibrationType</span><span class="Other">;</span> 
-                   <span class="Identifier">outError</span><span class="Other">:</span> <span class="Keyword">ptr</span> <span class="Identifier">LibmyoErrorDetails</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">LibmyoResult</span> <span class="Other">{.</span><span class="Identifier">cdecl</span><span class="Other">,</span> 
+<dt id="libmyoVibrate"><a name="libmyoVibrate,LibmyoMyo,LibmyoVibrationType,ptr.LibmyoErrorDetails"></a><pre><span class="Keyword">proc</span> <span class="Identifier">libmyoVibrate</span><span class="Other">(</span><span class="Identifier">myo</span><span class="Other">:</span> <span class="Identifier">LibmyoMyo</span><span class="Other">;</span> <span class="Identifier">vibrationType</span><span class="Other">:</span> <span class="Identifier">LibmyoVibrationType</span><span class="Other">;</span>
+                  <span class="Identifier">outError</span><span class="Other">:</span> <span class="Keyword">ptr</span> <span class="Identifier">LibmyoErrorDetails</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">LibmyoResult</span> <span class="Other">{.</span><span class="Identifier">cdecl</span><span class="Other">,</span>
     <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;libmyo_vibrate&quot;</span><span class="Other">.}</span></pre></dt>
 <dd>
 Vibrate the given myo.<dl class="docutils"><dt>myo</dt>
@@ -1656,11 +1635,11 @@ Vibrate the given myo.<dl class="docutils"><dt>myo</dt>
 </dl>
 
 &nbsp;&nbsp;<a
-href="https://github.com/nimious/io-myo/tree/master/src/libmyo.nim#L153"
+href="https://github.com/nimious/myo/tree/master/src/libmyo.nim#L158"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="libmyoRequestRssi"><a name="libmyoRequestRssi,LibmyoMyo,ptr.LibmyoErrorDetails"></a><pre><span class="Keyword">proc</span> <span class="Identifier">libmyoRequestRssi</span><span class="Other">(</span><span class="Identifier">myo</span><span class="Other">:</span> <span class="Identifier">LibmyoMyo</span><span class="Other">;</span> <span class="Identifier">outError</span><span class="Other">:</span> <span class="Keyword">ptr</span> <span class="Identifier">LibmyoErrorDetails</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">LibmyoResult</span> <span class="Other">{.</span>
-    <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;libmyo_vibrate&quot;</span><span class="Other">.}</span></pre></dt>
+    <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;libmyo_request_rssi&quot;</span><span class="Other">.}</span></pre></dt>
 <dd>
 Request the RSSI for a given myo.<dl class="docutils"><dt>myo</dt>
 <dd>The Myo armband to request the RSSI for</dd>
@@ -1674,12 +1653,12 @@ Request the RSSI for a given myo.<dl class="docutils"><dt>myo</dt>
 </dl>
 
 &nbsp;&nbsp;<a
-href="https://github.com/nimious/io-myo/tree/master/src/libmyo.nim#L169"
+href="https://github.com/nimious/myo/tree/master/src/libmyo.nim#L174"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
-<dt id="libmyoSetStreamEmg"><a name="libmyoSetStreamEmg,LibmyoMyo,LibmyoStreamEmg,ptr.LibmyoErrorDetails"></a><pre><span class="Keyword">proc</span> <span class="Identifier">libmyoSetStreamEmg</span><span class="Other">(</span><span class="Identifier">myo</span><span class="Other">:</span> <span class="Identifier">LibmyoMyo</span><span class="Other">;</span> <span class="Identifier">emg</span><span class="Other">:</span> <span class="Identifier">LibmyoStreamEmg</span><span class="Other">;</span> 
-                        <span class="Identifier">outError</span><span class="Other">:</span> <span class="Keyword">ptr</span> <span class="Identifier">LibmyoErrorDetails</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">LibmyoResult</span> <span class="Other">{.</span><span class="Identifier">cdecl</span><span class="Other">,</span> 
-    <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;libmyo_request_rssi&quot;</span><span class="Other">.}</span></pre></dt>
+<dt id="libmyoSetStreamEmg"><a name="libmyoSetStreamEmg,LibmyoMyo,LibmyoStreamEmg,ptr.LibmyoErrorDetails"></a><pre><span class="Keyword">proc</span> <span class="Identifier">libmyoSetStreamEmg</span><span class="Other">(</span><span class="Identifier">myo</span><span class="Other">:</span> <span class="Identifier">LibmyoMyo</span><span class="Other">;</span> <span class="Identifier">emg</span><span class="Other">:</span> <span class="Identifier">LibmyoStreamEmg</span><span class="Other">;</span>
+                       <span class="Identifier">outError</span><span class="Other">:</span> <span class="Keyword">ptr</span> <span class="Identifier">LibmyoErrorDetails</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">LibmyoResult</span> <span class="Other">{.</span><span class="Identifier">cdecl</span><span class="Other">,</span>
+    <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;libmyo_set_stream_emg&quot;</span><span class="Other">.}</span></pre></dt>
 <dd>
 Set whether or not to stream EMG data for a given myo.<dl class="docutils"><dt>myo</dt>
 <dd>The Myo armband to set streaming for</dd>
@@ -1695,11 +1674,11 @@ Set whether or not to stream EMG data for a given myo.<dl class="docutils"><dt>m
 </dl>
 
 &nbsp;&nbsp;<a
-href="https://github.com/nimious/io-myo/tree/master/src/libmyo.nim#L190"
+href="https://github.com/nimious/myo/tree/master/src/libmyo.nim#L197"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
-<dt id="libmyoMyoUnlock"><a name="libmyoMyoUnlock,LibmyoMyo,LibmyoUnlockType,ptr.LibmyoErrorDetails"></a><pre><span class="Keyword">proc</span> <span class="Identifier">libmyoMyoUnlock</span><span class="Other">(</span><span class="Identifier">myo</span><span class="Other">:</span> <span class="Identifier">LibmyoMyo</span><span class="Other">;</span> <span class="Identifier">unlockType</span><span class="Other">:</span> <span class="Identifier">LibmyoUnlockType</span><span class="Other">;</span> 
-                     <span class="Identifier">outError</span><span class="Other">:</span> <span class="Keyword">ptr</span> <span class="Identifier">LibmyoErrorDetails</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">LibmyoResult</span> <span class="Other">{.</span><span class="Identifier">cdecl</span><span class="Other">,</span> 
+<dt id="libmyoMyoUnlock"><a name="libmyoMyoUnlock,LibmyoMyo,LibmyoUnlockType,ptr.LibmyoErrorDetails"></a><pre><span class="Keyword">proc</span> <span class="Identifier">libmyoMyoUnlock</span><span class="Other">(</span><span class="Identifier">myo</span><span class="Other">:</span> <span class="Identifier">LibmyoMyo</span><span class="Other">;</span> <span class="Identifier">unlockType</span><span class="Other">:</span> <span class="Identifier">LibmyoUnlockType</span><span class="Other">;</span>
+                    <span class="Identifier">outError</span><span class="Other">:</span> <span class="Keyword">ptr</span> <span class="Identifier">LibmyoErrorDetails</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">LibmyoResult</span> <span class="Other">{.</span><span class="Identifier">cdecl</span><span class="Other">,</span>
     <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;libmyo_myo_unlock&quot;</span><span class="Other">.}</span></pre></dt>
 <dd>
 Unlock the given Myo.<dl class="docutils"><dt>myo</dt>
@@ -1717,7 +1696,7 @@ Unlock the given Myo.<dl class="docutils"><dt>myo</dt>
 <p>Can be called when a Myo is paired. A <a class="reference external" href="#LibmyoEventUnlocked">LibmyoEventUnlocked</a> event will be generated if the Myo was locked.</p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/nimious/io-myo/tree/master/src/libmyo.nim#L229"
+href="https://github.com/nimious/myo/tree/master/src/libmyo.nim#L241"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="libmyoMyoLock"><a name="libmyoMyoLock,LibmyoMyo,ptr.LibmyoErrorDetails"></a><pre><span class="Keyword">proc</span> <span class="Identifier">libmyoMyoLock</span><span class="Other">(</span><span class="Identifier">myo</span><span class="Other">:</span> <span class="Identifier">LibmyoMyo</span><span class="Other">;</span> <span class="Identifier">outError</span><span class="Other">:</span> <span class="Keyword">ptr</span> <span class="Identifier">LibmyoErrorDetails</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">LibmyoResult</span> <span class="Other">{.</span>
@@ -1736,11 +1715,11 @@ Lock the given Myo immediately.<dl class="docutils"><dt>myo</dt>
 <p>Can be called when a Myo is paired. A <a class="reference external" href="#LibmyoEventLocked">LibmyoEventLocked</a> event will be generated if the Myo was unlocked.</p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/nimious/io-myo/tree/master/src/libmyo.nim#L248"
+href="https://github.com/nimious/myo/tree/master/src/libmyo.nim#L260"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
-<dt id="libmyoMyoNotifyUserAction"><a name="libmyoMyoNotifyUserAction,LibmyoMyo,LibmyoUserActionType,ptr.LibmyoErrorDetails"></a><pre><span class="Keyword">proc</span> <span class="Identifier">libmyoMyoNotifyUserAction</span><span class="Other">(</span><span class="Identifier">myo</span><span class="Other">:</span> <span class="Identifier">LibmyoMyo</span><span class="Other">;</span> <span class="Identifier">actionType</span><span class="Other">:</span> <span class="Identifier">LibmyoUserActionType</span><span class="Other">;</span> 
-                               <span class="Identifier">outError</span><span class="Other">:</span> <span class="Keyword">ptr</span> <span class="Identifier">LibmyoErrorDetails</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">LibmyoResult</span> <span class="Other">{.</span>
+<dt id="libmyoMyoNotifyUserAction"><a name="libmyoMyoNotifyUserAction,LibmyoMyo,LibmyoUserActionType,ptr.LibmyoErrorDetails"></a><pre><span class="Keyword">proc</span> <span class="Identifier">libmyoMyoNotifyUserAction</span><span class="Other">(</span><span class="Identifier">myo</span><span class="Other">:</span> <span class="Identifier">LibmyoMyo</span><span class="Other">;</span> <span class="Identifier">actionType</span><span class="Other">:</span> <span class="Identifier">LibmyoUserActionType</span><span class="Other">;</span>
+                              <span class="Identifier">outError</span><span class="Other">:</span> <span class="Keyword">ptr</span> <span class="Identifier">LibmyoErrorDetails</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">LibmyoResult</span> <span class="Other">{.</span>
     <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;libmyo_myo_notify_user_action&quot;</span><span class="Other">.}</span></pre></dt>
 <dd>
 Notify the given Myo that a user action was recognized.<dl class="docutils"><dt>myo</dt>
@@ -1756,10 +1735,10 @@ Notify the given Myo that a user action was recognized.<dl class="docutils"><dt>
 <p>Can be called when a Myo is paired. Will cause Myo to vibrate.</p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/nimious/io-myo/tree/master/src/libmyo.nim#L272"
+href="https://github.com/nimious/myo/tree/master/src/libmyo.nim#L285"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
-<dt id="libmyoEventGetType"><a name="libmyoEventGetType,LibmyoEvent"></a><pre><span class="Keyword">proc</span> <span class="Identifier">libmyoEventGetType</span><span class="Other">(</span><span class="Identifier">event</span><span class="Other">:</span> <span class="Identifier">LibmyoEvent</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">LibmyoEventType</span> <span class="Other">{.</span><span class="Identifier">cdecl</span><span class="Other">,</span> 
+<dt id="libmyoEventGetType"><a name="libmyoEventGetType,LibmyoEvent"></a><pre><span class="Keyword">proc</span> <span class="Identifier">libmyoEventGetType</span><span class="Other">(</span><span class="Identifier">event</span><span class="Other">:</span> <span class="Identifier">LibmyoEvent</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">LibmyoEventType</span> <span class="Other">{.</span><span class="Identifier">cdecl</span><span class="Other">,</span>
     <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;libmyo_event_get_type&quot;</span><span class="Other">.}</span></pre></dt>
 <dd>
 Retrieve the type of an event.<dl class="docutils"><dt>event</dt>
@@ -1769,10 +1748,10 @@ Retrieve the type of an event.<dl class="docutils"><dt>event</dt>
 </dl>
 
 &nbsp;&nbsp;<a
-href="https://github.com/nimious/io-myo/tree/master/src/libmyo.nim#L312"
+href="https://github.com/nimious/myo/tree/master/src/libmyo.nim#L335"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
-<dt id="libmyoEventGetTimestamp"><a name="libmyoEventGetTimestamp,LibmyoEvent"></a><pre><span class="Keyword">proc</span> <span class="Identifier">libmyoEventGetTimestamp</span><span class="Other">(</span><span class="Identifier">event</span><span class="Other">:</span> <span class="Identifier">LibmyoEvent</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">culonglong</span> <span class="Other">{.</span><span class="Identifier">cdecl</span><span class="Other">,</span> 
+<dt id="libmyoEventGetTimestamp"><a name="libmyoEventGetTimestamp,LibmyoEvent"></a><pre><span class="Keyword">proc</span> <span class="Identifier">libmyoEventGetTimestamp</span><span class="Other">(</span><span class="Identifier">event</span><span class="Other">:</span> <span class="Identifier">LibmyoEvent</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">culonglong</span> <span class="Other">{.</span><span class="Identifier">cdecl</span><span class="Other">,</span>
     <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;libmyo_event_get_timestamp&quot;</span><span class="Other">.}</span></pre></dt>
 <dd>
 Retrieve the timestamp of an event.<dl class="docutils"><dt>event</dt>
@@ -1783,10 +1762,10 @@ Retrieve the timestamp of an event.<dl class="docutils"><dt>event</dt>
 <p>See <a class="reference external" href="#libmyoNow">libmyoNow</a> for details on timestamps.</p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/nimious/io-myo/tree/master/src/libmyo.nim#L322"
+href="https://github.com/nimious/myo/tree/master/src/libmyo.nim#L345"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
-<dt id="libmyoEventGetMyo"><a name="libmyoEventGetMyo,LibmyoEvent"></a><pre><span class="Keyword">proc</span> <span class="Identifier">libmyoEventGetMyo</span><span class="Other">(</span><span class="Identifier">event</span><span class="Other">:</span> <span class="Identifier">LibmyoEvent</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">LibmyoMyo</span> <span class="Other">{.</span><span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">,</span> 
+<dt id="libmyoEventGetMyo"><a name="libmyoEventGetMyo,LibmyoEvent"></a><pre><span class="Keyword">proc</span> <span class="Identifier">libmyoEventGetMyo</span><span class="Other">(</span><span class="Identifier">event</span><span class="Other">:</span> <span class="Identifier">LibmyoEvent</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">LibmyoMyo</span> <span class="Other">{.</span><span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">,</span>
     <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;libmyo_event_get_myo&quot;</span><span class="Other">.}</span></pre></dt>
 <dd>
 Retrieve the Myo associated with an event.<dl class="docutils"><dt>event</dt>
@@ -1796,12 +1775,12 @@ Retrieve the Myo associated with an event.<dl class="docutils"><dt>event</dt>
 </dl>
 
 &nbsp;&nbsp;<a
-href="https://github.com/nimious/io-myo/tree/master/src/libmyo.nim#L334"
+href="https://github.com/nimious/myo/tree/master/src/libmyo.nim#L357"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
-<dt id="libmyoEventGetFirmwareVersion"><a name="libmyoEventGetFirmwareVersion,LibmyoEvent,LibmyoVersionComponent"></a><pre><span class="Keyword">proc</span> <span class="Identifier">libmyoEventGetFirmwareVersion</span><span class="Other">(</span><span class="Identifier">event</span><span class="Other">:</span> <span class="Identifier">LibmyoEvent</span><span class="Other">;</span> 
-                                   <span class="Identifier">component</span><span class="Other">:</span> <span class="Identifier">LibmyoVersionComponent</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> <span class="Other">{.</span>
-    <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;libmyo_event_get_firmware_version&quot;</span><span class="Other">.}</span></pre></dt>
+<dt id="libmyoEventGetFirmwareVersion"><a name="libmyoEventGetFirmwareVersion,LibmyoEvent,LibmyoVersionComponent"></a><pre><span class="Keyword">proc</span> <span class="Identifier">libmyoEventGetFirmwareVersion</span><span class="Other">(</span><span class="Identifier">event</span><span class="Other">:</span> <span class="Identifier">LibmyoEvent</span><span class="Other">;</span>
+                                  <span class="Identifier">component</span><span class="Other">:</span> <span class="Identifier">LibmyoVersionComponent</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> <span class="Other">{.</span><span class="Identifier">cdecl</span><span class="Other">,</span>
+    <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;libmyo_event_get_firmware_version&quot;</span><span class="Other">.}</span></pre></dt>
 <dd>
 Retrieve the Myo armband's firmware version from an event.<dl class="docutils"><dt>event</dt>
 <dd>The event</dd>
@@ -1813,10 +1792,10 @@ Retrieve the Myo armband's firmware version from an event.<dl class="docutils"><
 <p>Valid for <a class="reference external" href="#LibmyoEventPaired">LibmyoEventPaired</a> and <a class="reference external" href="#LibmyoEventConnected">LibmyoEventConnected</a> events.</p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/nimious/io-myo/tree/master/src/libmyo.nim#L359"
+href="https://github.com/nimious/myo/tree/master/src/libmyo.nim#L388"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
-<dt id="libmyoEventGetArm"><a name="libmyoEventGetArm,LibmyoEvent"></a><pre><span class="Keyword">proc</span> <span class="Identifier">libmyoEventGetArm</span><span class="Other">(</span><span class="Identifier">event</span><span class="Other">:</span> <span class="Identifier">LibmyoEvent</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">LibmyoArm</span> <span class="Other">{.</span><span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">,</span> 
+<dt id="libmyoEventGetArm"><a name="libmyoEventGetArm,LibmyoEvent"></a><pre><span class="Keyword">proc</span> <span class="Identifier">libmyoEventGetArm</span><span class="Other">(</span><span class="Identifier">event</span><span class="Other">:</span> <span class="Identifier">LibmyoEvent</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">LibmyoArm</span> <span class="Other">{.</span><span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">,</span>
     <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;libmyo_event_get_arm&quot;</span><span class="Other">.}</span></pre></dt>
 <dd>
 Retrieve the arm associated with an event.<dl class="docutils"><dt>event</dt>
@@ -1827,10 +1806,10 @@ Retrieve the arm associated with an event.<dl class="docutils"><dt>event</dt>
 <p>Valid for <a class="reference external" href="#LibmyoEventArmSynced">LibmyoEventArmSynced</a> events only.</p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/nimious/io-myo/tree/master/src/libmyo.nim#L383"
+href="https://github.com/nimious/myo/tree/master/src/libmyo.nim#L415"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
-<dt id="libmyoEventGetXDirection"><a name="libmyoEventGetXDirection,LibmyoEvent"></a><pre><span class="Keyword">proc</span> <span class="Identifier">libmyoEventGetXDirection</span><span class="Other">(</span><span class="Identifier">event</span><span class="Other">:</span> <span class="Identifier">LibmyoEvent</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">LibmyoXDirection</span> <span class="Other">{.</span><span class="Identifier">cdecl</span><span class="Other">,</span> 
+<dt id="libmyoEventGetXDirection"><a name="libmyoEventGetXDirection,LibmyoEvent"></a><pre><span class="Keyword">proc</span> <span class="Identifier">libmyoEventGetXDirection</span><span class="Other">(</span><span class="Identifier">event</span><span class="Other">:</span> <span class="Identifier">LibmyoEvent</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">LibmyoXDirection</span> <span class="Other">{.</span><span class="Identifier">cdecl</span><span class="Other">,</span>
     <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;libmyo_event_get_x_direction&quot;</span><span class="Other">.}</span></pre></dt>
 <dd>
 Retrieve the x-direction associated with an event.<dl class="docutils"><dt>event</dt>
@@ -1841,7 +1820,7 @@ Retrieve the x-direction associated with an event.<dl class="docutils"><dt>event
 <p>The x-direction specifies which way Myo's +x axis is pointing relative to the user's arm. Valid for <a class="reference external" href="#LibmyoEventArmSynced">LibmyoEventArmSynced</a> events only.</p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/nimious/io-myo/tree/master/src/libmyo.nim#L403"
+href="https://github.com/nimious/myo/tree/master/src/libmyo.nim#L438"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="libmyoEventGetOrientation"><a name="libmyoEventGetOrientation,LibmyoEvent,LibmyoOrientationIndex"></a><pre><span class="Keyword">proc</span> <span class="Identifier">libmyoEventGetOrientation</span><span class="Other">(</span><span class="Identifier">event</span><span class="Other">:</span> <span class="Identifier">LibmyoEvent</span><span class="Other">;</span> <span class="Identifier">index</span><span class="Other">:</span> <span class="Identifier">LibmyoOrientationIndex</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cfloat</span> <span class="Other">{.</span>
@@ -1857,11 +1836,11 @@ Retrieve orientation data associated with an event.<dl class="docutils"><dt>even
 <p>Valid for <a class="reference external" href="#LibmyoEventOrientation">LibmyoEventOrientation</a> events only.</p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/nimious/io-myo/tree/master/src/libmyo.nim#L426"
+href="https://github.com/nimious/myo/tree/master/src/libmyo.nim#L465"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
-<dt id="libmyoEventGetAccelerometer"><a name="libmyoEventGetAccelerometer,LibmyoEvent,cuint"></a><pre><span class="Keyword">proc</span> <span class="Identifier">libmyoEventGetAccelerometer</span><span class="Other">(</span><span class="Identifier">event</span><span class="Other">:</span> <span class="Identifier">LibmyoEvent</span><span class="Other">;</span> <span class="Identifier">index</span><span class="Other">:</span> <span class="Identifier">cuint</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cfloat</span> <span class="Other">{.</span>
-    <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;libmyo_event_get_accelerometer&quot;</span><span class="Other">.}</span></pre></dt>
+<dt id="libmyoEventGetAccelerometer"><a name="libmyoEventGetAccelerometer,LibmyoEvent,cuint"></a><pre><span class="Keyword">proc</span> <span class="Identifier">libmyoEventGetAccelerometer</span><span class="Other">(</span><span class="Identifier">event</span><span class="Other">:</span> <span class="Identifier">LibmyoEvent</span><span class="Other">;</span> <span class="Identifier">index</span><span class="Other">:</span> <span class="Identifier">cuint</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cfloat</span> <span class="Other">{.</span><span class="Identifier">cdecl</span><span class="Other">,</span>
+    <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;libmyo_event_get_accelerometer&quot;</span><span class="Other">.}</span></pre></dt>
 <dd>
 Retrieve raw accelerometer data associated with an event in units of g.<dl class="docutils"><dt>event</dt>
 <dd>The event</dd>
@@ -1873,10 +1852,10 @@ Retrieve raw accelerometer data associated with an event in units of g.<dl class
 <p>Valid for <a class="reference external" href="#LibmyoEventOrientation">LibmyoEventOrientation</a> events only.</p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/nimious/io-myo/tree/master/src/libmyo.nim#L441"
+href="https://github.com/nimious/myo/tree/master/src/libmyo.nim#L480"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
-<dt id="libmyoEventGetGyroscope"><a name="libmyoEventGetGyroscope,LibmyoEvent,cuint"></a><pre><span class="Keyword">proc</span> <span class="Identifier">libmyoEventGetGyroscope</span><span class="Other">(</span><span class="Identifier">event</span><span class="Other">:</span> <span class="Identifier">LibmyoEvent</span><span class="Other">;</span> <span class="Identifier">index</span><span class="Other">:</span> <span class="Identifier">cuint</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cfloat</span> <span class="Other">{.</span><span class="Identifier">cdecl</span><span class="Other">,</span> 
+<dt id="libmyoEventGetGyroscope"><a name="libmyoEventGetGyroscope,LibmyoEvent,cuint"></a><pre><span class="Keyword">proc</span> <span class="Identifier">libmyoEventGetGyroscope</span><span class="Other">(</span><span class="Identifier">event</span><span class="Other">:</span> <span class="Identifier">LibmyoEvent</span><span class="Other">;</span> <span class="Identifier">index</span><span class="Other">:</span> <span class="Identifier">cuint</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cfloat</span> <span class="Other">{.</span><span class="Identifier">cdecl</span><span class="Other">,</span>
     <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;libmyo_event_get_gyroscope&quot;</span><span class="Other">.}</span></pre></dt>
 <dd>
 Retrieve raw gyroscope data associated with an event in units of deg/s.<dl class="docutils"><dt>event</dt>
@@ -1887,11 +1866,11 @@ Retrieve raw gyroscope data associated with an event in units of deg/s.<dl class
 <p>Valid for <a class="reference external" href="#libmyoeventorientation-libmyoeventorientation">LibmyoEventOrientation &lt;#LibmyoEventOrientation</a> events only.</p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/nimious/io-myo/tree/master/src/libmyo.nim#L455"
+href="https://github.com/nimious/myo/tree/master/src/libmyo.nim#L494"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
-<dt id="libmyoEventGetPose"><a name="libmyoEventGetPose,LibmyoEvent"></a><pre><span class="Keyword">proc</span> <span class="Identifier">libmyoEventGetPose</span><span class="Other">(</span><span class="Identifier">event</span><span class="Other">:</span> <span class="Identifier">LibmyoEvent</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">LibmyoPose</span> <span class="Other">{.</span><span class="Identifier">cdecl</span><span class="Other">,</span> 
-    <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;libmyo_event_get_pose&quot;</span><span class="Other">.}</span></pre></dt>
+<dt id="libmyoEventGetPose"><a name="libmyoEventGetPose,LibmyoEvent"></a><pre><span class="Keyword">proc</span> <span class="Identifier">libmyoEventGetPose</span><span class="Other">(</span><span class="Identifier">event</span><span class="Other">:</span> <span class="Identifier">LibmyoEvent</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">LibmyoPose</span> <span class="Other">{.</span><span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">,</span>
+    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;libmyo_event_get_pose&quot;</span><span class="Other">.}</span></pre></dt>
 <dd>
 Retrieve the pose associated with an event.<dl class="docutils"><dt>event</dt>
 <dd>The event</dd>
@@ -1901,10 +1880,10 @@ Retrieve the pose associated with an event.<dl class="docutils"><dt>event</dt>
 <p>Valid for <a class="reference external" href="#LibmyoEventPose">LibmyoEventPose</a> events only.</p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/nimious/io-myo/tree/master/src/libmyo.nim#L467"
+href="https://github.com/nimious/myo/tree/master/src/libmyo.nim#L506"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
-<dt id="libmyoEventGetRssi"><a name="libmyoEventGetRssi,LibmyoEvent"></a><pre><span class="Keyword">proc</span> <span class="Identifier">libmyoEventGetRssi</span><span class="Other">(</span><span class="Identifier">event</span><span class="Other">:</span> <span class="Identifier">LibmyoEvent</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cschar</span> <span class="Other">{.</span><span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">,</span> 
+<dt id="libmyoEventGetRssi"><a name="libmyoEventGetRssi,LibmyoEvent"></a><pre><span class="Keyword">proc</span> <span class="Identifier">libmyoEventGetRssi</span><span class="Other">(</span><span class="Identifier">event</span><span class="Other">:</span> <span class="Identifier">LibmyoEvent</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cschar</span> <span class="Other">{.</span><span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">,</span>
     <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;libmyo_event_get_rssi&quot;</span><span class="Other">.}</span></pre></dt>
 <dd>
 Retreive the RSSI associated with an event.<dl class="docutils"><dt>event</dt>
@@ -1915,10 +1894,10 @@ Retreive the RSSI associated with an event.<dl class="docutils"><dt>event</dt>
 <p>Valid for <a class="reference external" href="#LibmyoEventRssi">LibmyoEventRssi</a> events only.</p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/nimious/io-myo/tree/master/src/libmyo.nim#L479"
+href="https://github.com/nimious/myo/tree/master/src/libmyo.nim#L518"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
-<dt id="libmyoEventGetEmg"><a name="libmyoEventGetEmg,LibmyoEvent,cuint"></a><pre><span class="Keyword">proc</span> <span class="Identifier">libmyoEventGetEmg</span><span class="Other">(</span><span class="Identifier">event</span><span class="Other">:</span> <span class="Identifier">LibmyoEvent</span><span class="Other">;</span> <span class="Identifier">sensor</span><span class="Other">:</span> <span class="Identifier">cuint</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cschar</span> <span class="Other">{.</span><span class="Identifier">cdecl</span><span class="Other">,</span> 
+<dt id="libmyoEventGetEmg"><a name="libmyoEventGetEmg,LibmyoEvent,cint"></a><pre><span class="Keyword">proc</span> <span class="Identifier">libmyoEventGetEmg</span><span class="Other">(</span><span class="Identifier">event</span><span class="Other">:</span> <span class="Identifier">LibmyoEvent</span><span class="Other">;</span> <span class="Identifier">sensor</span><span class="Other">:</span> <span class="Identifier">cint</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cschar</span> <span class="Other">{.</span><span class="Identifier">cdecl</span><span class="Other">,</span>
     <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;libmyo_event_get_emg&quot;</span><span class="Other">.}</span></pre></dt>
 <dd>
 Retrieve an EMG data point associated with an event.<dl class="docutils"><dt>event</dt>
@@ -1931,11 +1910,11 @@ Retrieve an EMG data point associated with an event.<dl class="docutils"><dt>eve
 <p>Valid for <a class="reference external" href="#LibmyoEventEmg">LibmyoEventEmg</a> events only.</p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/nimious/io-myo/tree/master/src/libmyo.nim#L491"
+href="https://github.com/nimious/myo/tree/master/src/libmyo.nim#L530"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
-<dt id="libmyoRun"><a name="libmyoRun,LibmyoHub,cint,LibmyoHandler,pointer,ptr.LibmyoErrorDetails"></a><pre><span class="Keyword">proc</span> <span class="Identifier">libmyoRun</span><span class="Other">(</span><span class="Identifier">hub</span><span class="Other">:</span> <span class="Identifier">LibmyoHub</span><span class="Other">;</span> <span class="Identifier">duration</span><span class="Other">:</span> <span class="Identifier">cint</span><span class="Other">;</span> <span class="Identifier">handler</span><span class="Other">:</span> <span class="Identifier">LibmyoHandler</span><span class="Other">;</span> 
-               <span class="Identifier">userData</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">;</span> <span class="Identifier">outError</span><span class="Other">:</span> <span class="Keyword">ptr</span> <span class="Identifier">LibmyoErrorDetails</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">LibmyoResult</span> <span class="Other">{.</span>
+<dt id="libmyoRun"><a name="libmyoRun,LibmyoHub,cint,LibmyoHandler,pointer,ptr.LibmyoErrorDetails"></a><pre><span class="Keyword">proc</span> <span class="Identifier">libmyoRun</span><span class="Other">(</span><span class="Identifier">hub</span><span class="Other">:</span> <span class="Identifier">LibmyoHub</span><span class="Other">;</span> <span class="Identifier">duration</span><span class="Other">:</span> <span class="Identifier">cint</span><span class="Other">;</span> <span class="Identifier">handler</span><span class="Other">:</span> <span class="Identifier">LibmyoHandler</span><span class="Other">;</span>
+              <span class="Identifier">userData</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">;</span> <span class="Identifier">outError</span><span class="Other">:</span> <span class="Keyword">ptr</span> <span class="Identifier">LibmyoErrorDetails</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">LibmyoResult</span> <span class="Other">{.</span>
     <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;libmyo_run&quot;</span><span class="Other">.}</span></pre></dt>
 <dd>
 Process events and call the provided callback as they occur.<dl class="docutils"><dt>hub</dt>
@@ -1951,10 +1930,10 @@ Process events and call the provided callback as they occur.<dl class="docutils"
 </ul>
 </dd>
 </dl>
-<p>Runs for up to approximately <cite>duration</cite> milliseconds or until a called handler returns <cite>LibmyoHandlerResult.stop &lt;#LibmyoHandlerResult&gt;</cite>.</p>
+<p>Runs for up to approximately <cite>duration</cite> milliseconds or until a called handler returns <a class="reference external" href="#LibmyoHandlerResult">LibmyoHandlerResult.stop</a>.</p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/nimious/io-myo/tree/master/src/libmyo.nim#L519"
+href="https://github.com/nimious/myo/tree/master/src/libmyo.nim#L560"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 
@@ -1966,8 +1945,8 @@ class="link-seesrc" target="_blank">Source</a>
     <div class="row">
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
-        <br>
-        <small>Made with Nim. Generated: 2015-03-17 09:52:01 UTC</small>
+        <br/>
+        <small>Made with Nim. Generated: 2016-01-30 12:39:36 UTC</small>
       </div>
     </div>
   </div>

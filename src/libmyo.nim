@@ -27,12 +27,16 @@ type
     ## are of things like pairing and global user preferences.
 
 
-  LibmyoResult* {.pure, size: sizeof(cint).} = enum ## \
+  LibmyoResult* {.pure, size: sizeof(cint).} = enum
     ## Possible return values for all libmyo procs that may fail.
-    success, ## The proc was successful
-    error, ## An error occured (use `libmyoErrorXXX` to get error details)
-    errorInvalidArgument, ## An argument was invalid
-    errorRuntime ## Runtime error occured
+    success,
+      ## The proc was successful
+    error,
+      ## An error occured (use `libmyoErrorXXX` to get error details)
+    errorInvalidArgument,
+      ## An argument was invalid
+    errorRuntime
+      ## Runtime error occured
 
 
   LibmyoErrorDetails* = pointer
@@ -115,10 +119,12 @@ proc libmyoShutdownHub*(hub: LibmyoHub; outError: ptr LibmyoErrorDetails):
 
 
 type
-  LibmyoLockingPolicy* {.pure, size: sizeof(cint).} = enum ## \
+  LibmyoLockingPolicy* {.pure, size: sizeof(cint).} = enum
     ## Supported locking policies.
-    none, ## Pose events are always sent
-    standard ## Pose events are not sent while a Myo is locked
+    none,
+      ## Pose events are always sent
+    standard
+      ## Pose events are not sent while a Myo is locked
 
 
 proc libmyoSetLockingPolicy*(hub: LibmyoHub; policy: LibmyoLockingPolicy;
@@ -142,8 +148,7 @@ type
   LibmyoMyo* = pointer
     ## Opaque type corresponding to a known Myo device.
 
-
-  LibmyoVibrationType* {.pure, size: sizeof(cint).} = enum ## \
+  LibmyoVibrationType* {.pure, size: sizeof(cint).} = enum
     ## Types of vibration.
     short,
     medium,
@@ -181,10 +186,12 @@ proc libmyoRequestRssi*(myo: LibmyoMyo; outError: ptr LibmyoErrorDetails):
 
 
 type
-  LibmyoStreamEmg* {.pure, size: sizeof(cint).} = enum ## \
+  LibmyoStreamEmg* {.pure, size: sizeof(cint).} = enum
     ## EMG streaming modes.
-    disabled, ## Do not send EMG data
-    enabled ## Send EMG data
+    disabled,
+      ## Do not send EMG data
+    enabled
+      ## Send EMG data
 
 
 proc libmyoSetStreamEmg*(myo: LibmyoMyo; emg: LibmyoStreamEmg;
@@ -204,26 +211,31 @@ proc libmyoSetStreamEmg*(myo: LibmyoMyo; emg: LibmyoStreamEmg;
 
 
 type
-  LibmyoPose* {.pure, size: sizeof(cint).} = enum ## \
+  LibmyoPose* {.pure, size: sizeof(cint).} = enum
     ## Supported poses.
-    rest = 0, ## Rest pose
-    fist = 1, ## User is making a fist
-    waveIn = 2, ## User has an open palm rotated towards the posterior of their
-      ## wrist
-    waveOut = 3, ## User has an open palm rotated towards the anterior of their
-      ## wrist
-    fingersSpread = 4, ## User has an open palm with their fingers spread away
-      ## from each other
-    doubleTap = 5, ## User tapped their thumb and middle finger together twice
-      ## in succession
-    numPoses, ## Number of poses supported; not a valid pose
+    rest = 0,
+      ## Rest pose
+    fist = 1,
+      ## User is making a fist
+    waveIn = 2,
+      ## User has an open palm rotated towards the posterior of their wrist
+    waveOut = 3,
+      ## User has an open palm rotated towards the anterior of their wrist
+    fingersSpread = 4,
+      ## User has an open palm with their fingers spread away from each other
+    doubleTap = 5,
+      ## User tapped their thumb and middle finger together twice in succession
+    numPoses,
+      ## Number of poses supported; not a valid pose
     unknown = 0x0000FFFF
 
 
-  LibmyoUnlockType* {.pure, size: sizeof(cint).} = enum ## \
+  LibmyoUnlockType* {.pure, size: sizeof(cint).} = enum
     ## Valid unlock types.
-    timed = 0, ## Unlock for a fixed period of time
-    hold = 1  ## Unlock until explicitly told to re-lock
+    timed = 0,
+      ## Unlock for a fixed period of time
+    hold = 1
+       ## Unlock until explicitly told to re-lock
 
 
 proc libmyoMyoUnlock*(myo: LibmyoMyo; unlockType: LibmyoUnlockType;
@@ -264,9 +276,10 @@ proc libmyoMyoLock*(myo: LibmyoMyo; outError: ptr LibmyoErrorDetails):
 
 
 type
-  LibmyoUserActionType* {.pure, size: sizeof(cint).} = enum ## \
+  LibmyoUserActionType* {.pure, size: sizeof(cint).} = enum
     ## User action types.
-    single = 0 ## User did a single, discrete action, such as pausing a video
+    single = 0
+      ## User did a single, discrete action, such as pausing a video
 
 
 proc libmyoMyoNotifyUserAction*(myo: LibmyoMyo;
@@ -287,23 +300,33 @@ proc libmyoMyoNotifyUserAction*(myo: LibmyoMyo;
 
 
 type
-  LibmyoEventType* {.pure, size: sizeof(cint).} = enum ## \
+  LibmyoEventType* {.pure, size: sizeof(cint).} = enum
     ## Types of events.
-    paired, ## Successfully paired with a Myo
-    unpaired,  ## Successfully unpaired from a Myo
-    connected, ## A Myo has successfully connected
-    disconnected, ## A Myo has been disconnected
-    armSynced, ## A Myo has recognized that the sync gesture has
-      ## been successfully performed
-    armUnsynced, ## A Myo has been moved or removed from the arm
-    orientation, ## Orientation data has been received
-    pose, ## A change in pose has been detected (see
-      ## `Libmyo_Pose <#Libmyo_Pose>`_)
-    rssi, ## An RSSI value has been received
-    unlocked, ## A Myo has become unlocked
-    locked, ## A Myo has become locked
-    emg ## EMG data has been received
-
+    paired,
+      ## Successfully paired with a Myo
+    unpaired,
+      ## Successfully unpaired from a Myo
+    connected,
+      ## A Myo has successfully connected
+    disconnected,
+      ## A Myo has been disconnected
+    armSynced,
+      ## A Myo has recognized that the sync gesture has been successfully
+      ## performed
+    armUnsynced,
+      ## A Myo has been moved or removed from the arm
+    orientation,
+      ## Orientation data has been received
+    pose,
+      ## A change in pose has been detected (see `Libmyo_Pose <#Libmyo_Pose>`_)
+    rssi,
+      ## An RSSI value has been received
+    unlocked,
+      ## A Myo has become unlocked
+    locked,
+      ## A Myo has become locked
+    emg
+      ## EMG data has been received
 
   LibmyoEvent* = pointer
     ## Information about an event.
@@ -342,18 +365,24 @@ proc libmyoEventGetMyo*(event: LibmyoEvent): LibmyoMyo
 
 
 type
-  LibmyoVersionComponent* {.pure, size: sizeof(cint).} = enum ## \
+  LibmyoVersionComponent* {.pure, size: sizeof(cint).} = enum
     ## Version number components.
-    major, ## Major version
-    minor, ## Minor version
-    patch, ## Patch version
-    hardware_rev ## Hardware revision
+    major,
+      ## Major version
+    minor,
+      ## Minor version
+    patch,
+      ## Patch version
+    hardwareRev
+      ## Hardware revision
 
 
-  LibmyoHardwareRev* {.pure, size: sizeof(cint).} = enum ## \
+  LibmyoHardwareRev* {.pure, size: sizeof(cint).} = enum
     ## Hardware revisions.
-    revC = 1, ## Alpha units
-    revD = 2 ## Consumer units
+    revC = 1,
+      ## Alpha units
+    revD = 2
+      ## Consumer units
 
 
 proc libmyoEventGetFirmwareVersion*(event: LibmyoEvent;
@@ -373,11 +402,14 @@ proc libmyoEventGetFirmwareVersion*(event: LibmyoEvent;
 
 
 type
-  LibmyoArm* {.pure, size: sizeof(cint).} = enum ## \
+  LibmyoArm* {.pure, size: sizeof(cint).} = enum
     ## Enumeration identifying a right arm or left arm
-    right, ## Myo is on the right arm
-    left, ## Myo is on the left arm
-    unknown ## Unknown arm
+    right,
+      ## Myo is on the right arm
+    left,
+      ## Myo is on the left arm
+    unknown
+      ## Unknown arm
 
 
 proc libmyoEventGetArm*(event: LibmyoEvent): LibmyoArm
@@ -393,11 +425,14 @@ proc libmyoEventGetArm*(event: LibmyoEvent): LibmyoArm
 
 
 type
-  LibmyoXDirection* {.pure, size: sizeof(cint).} = enum ## \
+  LibmyoXDirection* {.pure, size: sizeof(cint).} = enum
     ## Possible directions for Myo's +x axis relative to a user's arm.
-    towardWrist, ## Myo's +x axis is pointing toward the user's wrist
-    towardElbow, ## Myo's +x axis is pointing toward the user's elbow
-    unknown ## Unknown +x axis direction
+    towardWrist,
+      ## Myo's +x axis is pointing toward the user's wrist
+    towardElbow,
+      ## Myo's +x axis is pointing toward the user's elbow
+    unknown
+      ## Unknown +x axis direction
 
 
 proc libmyoEventGetXDirection*(event: LibmyoEvent): LibmyoXDirection
@@ -415,12 +450,16 @@ proc libmyoEventGetXDirection*(event: LibmyoEvent): LibmyoXDirection
 
 
 type
-  LibmyoOrientationIndex* {.size: sizeof(cint).} = enum ## \
+  LibmyoOrientationIndex* {.size: sizeof(cint).} = enum
     ## Index into orientation data, which is provided as a quaternion.
-    x = 0, ## First component of the quaternion's vector part
-    y = 1, ## Second component of the quaternion's vector part
-    z = 2, ## Third component of the quaternion's vector part
-    w = 3 ## Scalar component of the quaternion
+    x = 0,
+      ## First component of the quaternion's vector part
+    y = 1,
+      ## Second component of the quaternion's vector part
+    z = 2,
+      ## Third component of the quaternion's vector part
+    w = 3
+      ## Scalar component of the quaternion
 
 
 proc libmyoEventGetOrientation*(event: LibmyoEvent;
@@ -503,10 +542,12 @@ proc libmyoEventGetEmg*(event: LibmyoEvent; sensor: cint): cschar
 
 
 type
-  LibmyoHandlerResult* {.pure, size: sizeof(cint).} = enum ## \
+  LibmyoHandlerResult* {.pure, size: sizeof(cint).} = enum
     ## Return type for event handlers.
-    continueProcessing, ## Continue processing events
-    stop ## Stop processing events
+    continueProcessing,
+      ## Continue processing events
+    stop
+      ## Stop processing events
 
 
 type
